@@ -1,0 +1,16 @@
+{
+  "site": {
+    "name": "Red Blossom",
+    "url": "",
+    "language": "en",
+    "description": ""
+  },
+  "theme": {
+    "mode": "light",
+    "font": ["Inter", "JuzhoKaizen"]
+  },
+  "footer": {
+    "copyright-developer": "© 2025 Red Blossom. All development rights reserved by.",
+    "copyright-designer": "© 2025 Red Blossom. All design rights reserved by."
+  }
+}
