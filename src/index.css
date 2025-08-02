@@ -12,6 +12,7 @@
   --color-red: #8e0b06;
   --color-light-red: #e21f16;
   --color-dark-red: #790400;
+  --color-dark-two-red: #41030156;
   --color-black: #121212;
   --color-white: #ffffff;
   --color-soft-white: #faf7f6;
@@ -70,7 +71,7 @@
 
 @layer components {
   nav {
-    @apply w-full h-[6rem] absolute top-0 left-0 z-50 flex justify-between items-center bg-transparent px-5 md:px-10 lg:px-15;
+    @apply w-full h-[5rem] md:h-[6rem] absolute top-0 left-0 z-100 flex justify-between items-center bg-transparent px-5 md:px-10 lg:px-15;
     ul {
       @apply flex justify-center items-center gap-10;
       li {
