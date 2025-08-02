@@ -15,12 +15,12 @@ const Footer = () => {
     <footer>
       <div className="w-55 md:w-65 absolute top-0 right-0 rotate-15 translate-x-12 -translate-y-12">
         <img
-          src="/public/images/Trees/tree-7.png"
+          src="/images/Trees/tree-7.png"
           alt="tree"
           className="w-full absolute top-0"
         />
         <img
-          src="/public/images/Trees/tree-7-1.png"
+          src="/images/Trees/tree-7-1.png"
           alt="tree"
           className="w-full absolute top-0 -mt-9"
         />
@@ -28,12 +28,12 @@ const Footer = () => {
 
       <div className="w-55 md:w-65 absolute top-0 left-0 -rotate-15 -translate-x-12 -translate-y-15">
         <img
-          src="/public/images/Trees/tree-7-2.png"
+          src="/images/Trees/tree-7-2.png"
           alt="tree"
           className="w-full absolute top-0"
         />
         <img
-          src="/public/images/Trees/tree-7-2-1.png"
+          src="/images/Trees/tree-7-2-1.png"
           alt="tree"
           className="w-full absolute top-0 -mt-9"
         />

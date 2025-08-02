@@ -10,7 +10,7 @@ import {
 } from "@assets/icons";
 
 const Navbar = () => {
-  const [menuIsOpen, setMenuIsOpen] = useState(true);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const socialInfo = [
     { icon: RiDiscordFill, url: "#" },
