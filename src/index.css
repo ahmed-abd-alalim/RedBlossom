@@ -8,7 +8,7 @@
 
 @theme {
   --font-inter: "Inter", sans-serif;
-  --font-long: "JuzhoKaizen", sans-serif;
+  --font-juzhokaizen: "JuzhoKaizen", sans-serif;
   --color-red: #8e0b06;
   --color-light-red: #e21f16;
   --color-dark-red: #790400;
@@ -35,7 +35,11 @@
   }
 
   body {
-    @apply bg-soft-white font-inter select-none;
+    @apply h-full bg-soft-white font-inter select-none;
+  }
+
+  .app-container {
+    @apply min-h-screen flex flex-col justify-between overflow-hidden;
   }
 
   ::-webkit-scrollbar {
@@ -47,6 +51,15 @@
   .flex-center {
     @apply flex justify-center items-center;
   }
+  .flex-left {
+    @apply flex justify-start items-center;
+  }
+  .flex-right {
+    @apply flex justify-end items-center;
+  }
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
   .col-center {
     @apply flex flex-col justify-center items-center;
   }
@@ -55,5 +68,35 @@
   }
 }
 
-/* @layer components {
-} */
+@layer components {
+  nav {
+    @apply w-full h-[6rem] absolute top-0 left-0 z-50 flex justify-between items-center bg-transparent px-5 md:px-10 lg:px-15;
+    ul {
+      @apply flex justify-center items-center gap-10;
+      li {
+        @apply capitalize text-black font-medium text-[.8rem] cursor-pointer;
+      }
+    }
+  }
+  main {
+    @apply relative flex flex-col gap-20 px-5 md:px-10 lg:px-15;
+  }
+  footer {
+    @apply relative bg-[url(/images/bgs/6.webp)] bg-[length:200%] bg-[position:center_top] md:bg-[length:150%] bg-no-repeat;
+    h1 {
+      @apply font-juzhokaizen text-white text-[2.5rem]/12 px-15 md:px-5 lg:text-[5.8rem]/28 md:text-[3.8rem]/25 2xl:text-[7.8rem]/28 text-center;
+    }
+    h2 {
+      @apply text-[.8rem] text-black;
+    }
+    h4 {
+      @apply font-juzhokaizen text-[1.1rem] text-black;
+    }
+    ul {
+      @apply mt-1;
+      li {
+        @apply capitalize text-[1.05rem]/6 text-black cursor-pointer opacity-50;
+      }
+    }
+  }
+}
