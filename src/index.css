@@ -40,7 +40,7 @@
   }
 
   .app-container {
-    @apply min-h-screen flex flex-col justify-between overflow-hidden;
+    @apply min-h-screen flex flex-col justify-between overflow-hidden gap-50;
   }
 
   ::-webkit-scrollbar {
@@ -71,7 +71,7 @@
 
 @layer components {
   nav {
-    @apply w-full h-[5rem] md:h-[6rem] absolute top-0 left-0 z-100 flex justify-between items-center bg-transparent px-5 md:px-10 lg:px-15;
+    @apply w-full h-[5rem] md:h-[6rem] absolute top-0 left-0 z-100 flex justify-between items-center bg-transparent px-5 md:px-10;
     ul {
       @apply flex justify-center items-center gap-10;
       li {
@@ -80,8 +80,12 @@
     }
   }
   main {
-    @apply relative flex flex-col gap-20 px-5 md:px-10 lg:px-15;
+    @apply relative flex flex-col gap-20 lg:px-10;
   }
+  .gradient-layer {
+    @apply absolute z-3 -left-1 lg:left-0 w-[110%] lg:w-full h-[30%] md:h-[25%] lg:h-[36%] xl:h-[25%] from-soft-white to-[#00000000] from-48% md:from-30% lg:from-45% xl:from-20%;
+  }
+
   footer {
     @apply relative bg-[url(/images/bgs/6.webp)] bg-[length:200%] bg-[position:center_top] md:bg-[length:150%] bg-no-repeat;
     h1 {

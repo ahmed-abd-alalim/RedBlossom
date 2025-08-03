@@ -27,7 +27,7 @@ const Navbar = () => {
             : "bg-transparent"
         }
       >
-        <div className="flex-left lg:gap-35">
+        <div className="flex-left lg:gap-15">
           <div className="w-[3.8rem] md:w-[4.3rem]">
             <img src="/images/logo.png" alt="logo" width={"100%"} />
           </div>
@@ -38,7 +38,7 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
-        <div className="flex-right lg:gap-33">
+        <div className="flex-right lg:gap-15">
           <ul className="hidden lg:flex">
             <li>utility</li>
             <li className="uppercase">faq</li>
@@ -95,7 +95,7 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`bg-soft-white w-full h-[35%] md:h-[40%] fixed z-100 bottom-0 left-0 transition-all lg:transition-none duration-300 flex-center overflow-hidden ${
+        className={`bg-soft-white w-full h-[35%] md:h-[40%] fixed z-100 bottom-0 left-0 transition-all lg:transition-none duration-300 delay-50 flex-center overflow-hidden ${
           menuIsOpen
             ? "translate-x-[0%] lg:translate-x-[150%]"
             : "translate-x-[150%]"
