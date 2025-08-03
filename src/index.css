@@ -80,10 +80,10 @@
     }
   }
   main {
-    @apply relative flex flex-col gap-20 lg:px-10;
+    @apply relative flex flex-col gap-20;
   }
   .gradient-layer {
-    @apply absolute z-3 -left-1 lg:left-0 w-[110%] lg:w-full h-[30%] md:h-[25%] lg:h-[36%] xl:h-[25%] from-soft-white to-[#00000000] from-48% md:from-30% lg:from-45% xl:from-20%;
+    @apply absolute z-3 -left-1 lg:left-0 w-[110%] lg:w-full h-[30%] md:h-[25%] lg:h-[36%] xl:h-[25%] from-soft-white to-[#00000000] md:from-15% lg:from-10% xl:from-20%;
   }
 
   footer {

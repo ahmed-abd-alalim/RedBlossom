@@ -72,7 +72,7 @@ const Navbar = () => {
       </nav>
 
       <div
-        className={`bg-soft-white w-full h-[calc(65%-5rem)] md:h-[calc(60%-6rem)] fixed z-100 top-0 left-0 translate-y-[5rem] md:translate-y-[6rem] flex-center text-center transition-all lg:transition-none duration-300 ${
+        className={`bg-soft-white bg-[url(/images/bgs/1.webp)] bg-[length:110%] bg-[position:center] bg-no-repeat w-full h-[calc(65%-5rem)] md:h-[calc(60%-6rem)] fixed z-100 top-0 left-0 translate-y-[5rem] md:translate-y-[6rem] flex-center text-center transition-all lg:transition-none duration-300 ${
           menuIsOpen
             ? "translate-x-[0%] lg:translate-x-[150%]"
             : "translate-x-[150%]"
