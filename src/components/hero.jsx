@@ -31,7 +31,7 @@ const Hero = () => {
 
         <div className="h-[27rem] md:h-[50rem] lg:h-[60rem] xl:h-[100vh] overflow-hidden">
           <video
-            className="h-full relative z-2 scale-130 pr-[.2rem] md:scale-115 md:pr-[1.2rem] lg:scale-100 lg:pr-[1rem] xl:scale-110"
+            className="h-full relative z-2 scale-130 pr-[.1rem] md:scale-115 md:pr-[1.2rem] lg:scale-100 lg:pr-[1rem] xl:scale-110"
             autoPlay
             muted
           >
