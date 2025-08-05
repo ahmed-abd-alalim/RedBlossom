@@ -11,7 +11,7 @@ const About = () => {
         <div className="text-center">
           <span>symbolic images - spirits</span>
           <div className="w-15 inline-flex mx-4">
-            <img src="/public/images/logo.png" alt="logo" width={"100%"} />
+            <img src="/images/logo.png" alt="logo" width={"100%"} />
           </div>
           <span>that embody</span>
         </div>
@@ -43,7 +43,7 @@ const About = () => {
         This is a collection of elegant, symbolic images - spirits that embody
         beauty, strength and silence.
         <div className="w-15 m-auto mb-3">
-          <img src="/public/images/logo.png" alt="logo" width={"100%"} />
+          <img src="/images/logo.png" alt="logo" width={"100%"} />
         </div>
         Each NFT is inspired by Eastern aesthetics, emotional depth and
         multi-layered meanings.
