@@ -80,7 +80,7 @@
     }
   }
   main {
-    @apply relative flex flex-col gap-20;
+    @apply relative flex flex-col gap-15 xl:gap-25;
   }
   .gradient-layer {
     @apply absolute z-3 -left-1 lg:left-0 w-[110%] lg:w-full h-[30%] md:h-[25%] lg:h-[36%] xl:h-[25%] from-soft-white to-[#00000000] md:from-15% lg:from-10% xl:from-20%;

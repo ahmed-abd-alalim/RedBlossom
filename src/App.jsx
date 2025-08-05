@@ -2,7 +2,7 @@
 import { Navbar, Footer, Looding } from "@layouts";
 
 // import components
-import { Hero, About } from "@components";
+import { Hero, About, Collection } from "@components";
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Collection />
       </main>
       <Footer />
     </div>

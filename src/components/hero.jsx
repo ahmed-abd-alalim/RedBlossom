@@ -42,7 +42,7 @@ const Hero = () => {
         <div className="absolute z-1 abs-center w-[clamp(22rem,_71.43vw,_42rem)] h-[clamp(22rem,_71.43vw,_42rem)] rounded-full bg-radial-[at_50%_50%] from-light-red to-dark-red" />
       </div>
 
-      <div className="hidden relative z-4 xl:flex flex-col justify-center items-center gap-12 pt-20">
+      <div className="hidden relative z-4 xl:flex flex-col justify-center items-center gap-12 pt-20 ">
         <div className="w-full flex-between -translate-x-25 2xl:-translate-x-45">
           <h6 className="w-[50%] capitalize font-medium text-black text-[.7rem]/4">
             <span className="opacity-30">Red Blossom Spirits is a</span>
@@ -101,7 +101,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="relative z-5 flex flex-col justify-center items-center gap-3 xl:hidden -translate-y-15 md:-translate-y-30">
+      <div className="relative z-5 flex flex-col justify-center items-center gap-3 xl:hidden -translate-y-10 md:-translate-y-25">
         <h1 className="w-[45%] md:w-[30%]  lg:w-[50%] text-black text-[2.5rem]/11 md:text-[3rem]/13 lg:text-[5rem]/20 font-juzhokaizen text-center">
           Red Blossom Spirits
         </h1>
@@ -110,19 +110,19 @@ const Hero = () => {
         />
       </div>
 
-      <div className="w-[30%] md:w-[25%] xl:w-[20%] absolute z-5 xl:z-1 bottom-25 xl:bottom-0 -right-0 -rotate-10">
+      <div className="w-[30%] md:w-[25%] xl:w-[20%] absolute z-5 xl:z-1 bottom-25 xl:bottom-0 -right-5 -rotate-10">
         <div>
           <img src="/images/Trees/tree-1.png" alt="tree" width={"100%"} />
         </div>
-        <div className="w-full abs-center -mt-5">
+        <div className="w-full abs-center">
           <img src="/images/Trees/tree-1-1.png" alt="tree" width={"100%"} />
         </div>
       </div>
-      <div className="w-[30%] md:w-[25%] xl:w-[20%] absolute z-5 xl:z-1  bottom-25 xl:bottom-0 -left-1 rotate-10">
+      <div className="w-[30%] md:w-[20%] xl:w-[10%] absolute z-5 xl:z-1 top-[65%] md:top-[70%]  xl:top-[45%] -left-5 rotate-10">
         <div>
-          <img src="/images/Trees/tree-1-2.png" alt="tree" width={"85%"} />
+          <img src="/images/Trees/tree-1-2.png" alt="tree" width={"100%"} />
         </div>
-        <div className="w-full abs-center mt-5 -ml-4">
+        <div className="w-full abs-center">
           <img src="/images/Trees/tree-1-2-1.png" alt="tree" width={"100%"} />
         </div>
       </div>
