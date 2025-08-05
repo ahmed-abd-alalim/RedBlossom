@@ -1,11 +1,11 @@
 // import icon
 import { HiMiniArrowUpRight } from "@/assets/icons";
 
-const Button = ({ style }) => {
+const Button = ({ style, title }) => {
   return (
-    <div className={`${style} flex-center cursor-pointer`}>
+    <div className={`${style} flex justify-center items-center cursor-pointer`}>
       <div className="bg-red py-3 px-6 rounded-3xl text-white text-[.9rem] capitalize translate-x-3">
-        Join the Spirits
+        {title}
       </div>
       <div className="relative w-[2rem] h-3 bg-red">
         <div

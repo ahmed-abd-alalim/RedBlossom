@@ -13,7 +13,7 @@ const Footer = () => {
 
   return (
     <footer>
-      <div className="w-55 md:w-65 absolute top-0 right-0 rotate-15 translate-x-10 -translate-y-12">
+      <div className="w-50 md:w-65 absolute top-0 right-0 rotate-15 translate-x-10 -translate-y-12">
         <img src="/images/Trees/tree-7.png" alt="tree" className="w-full" />
         <img
           src="/images/Trees/tree-7-1.png"
@@ -22,7 +22,7 @@ const Footer = () => {
         />
       </div>
 
-      <div className="w-55 md:w-65 absolute top-0 left-0 -rotate-15 -translate-x-10 -translate-y-15">
+      <div className="w-50 md:w-65 absolute top-0 left-0 -rotate-15 -translate-x-10 -translate-y-15">
         <img src="/images/Trees/tree-7-2.png" alt="tree" className="w-full" />
         <img
           src="/images/Trees/tree-7-2-1.png"

@@ -3,7 +3,7 @@ import { HiMiniArrowUpRight } from "@/assets/icons";
 
 const About = () => {
   return (
-    <section className="relative w-full col-center bg-[url(/images/bgs/2.webp)] bg-[position:center_center] md:bg-[length:100%] bg-no-repeat">
+    <section className="relative w-full col-center bg-[url(/images/bgs/2.webp)] bg-[position:center_center] md:bg-[length:100%] bg-no-repeat -translate-y-4">
       <div className="hidden md:block relative font-juzhokaizen text-black uppercase md:text-[1.6rem]/8 xl:text-[1.9rem]/10 md:w-[82%] lg:w-[65%] xl:w-[60%] 2xl:w-[50%]">
         <span className="md:block text-center">
           This is a collection of elegant,
@@ -43,7 +43,7 @@ const About = () => {
         This is a collection of elegant, symbolic images - spirits that embody
         beauty, strength and silence.
         <div className="w-15 m-auto mb-3">
-          <img src="/public/images/logo.png" alt="logo" width={"100%"} />
+          <img src="/images/logo.png" alt="logo" width={"100%"} />
         </div>
         Each NFT is inspired by Eastern aesthetics, emotional depth and
         multi-layered meanings.
@@ -54,7 +54,7 @@ const About = () => {
         <HiMiniArrowUpRight className="text-[1.1rem]" />
       </div>
 
-      <div className="w-[30%] md:w-[25%] xl:w-[20%] absolute z-5 xl:z-1 bottom-25 xl:bottom-0 -right-3 md:-right-5">
+      <div className="w-[30%] md:w-[25%] xl:w-[20%] absolute z-5 xl:z-1 bottom-25 xl:bottom-0 -right-0 translate-x-8">
         <div>
           <img src="/images/Trees/tree-2.png" alt="tree" width={"100%"} />
         </div>
@@ -62,7 +62,7 @@ const About = () => {
           <img src="/images/Trees/tree-2-1.png" alt="tree" width={"100%"} />
         </div>
       </div>
-      <div className="w-[30%] md:w-[25%] xl:w-[15%] absolute z-5 xl:z-1  top-0 -left-5">
+      <div className="w-[30%] md:w-[25%] xl:w-[15%] absolute z-5 xl:z-1  top-0 -left-0 -translate-x-5">
         <div>
           <img src="/images/Trees/tree-2-2.png" alt="tree" width={"100%"} />
         </div>

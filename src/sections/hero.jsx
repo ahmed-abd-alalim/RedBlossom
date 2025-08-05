@@ -107,10 +107,11 @@ const Hero = () => {
         </h1>
         <Button
           style={"scale-105 md:scale-120 lg:scale-165  md:mt-3 lg:mt-5"}
+          title={"Join the Spirits"}
         />
       </div>
 
-      <div className="w-[30%] md:w-[25%] xl:w-[20%] absolute z-5 xl:z-1 bottom-25 xl:bottom-0 -right-5 -rotate-10">
+      <div className="w-[30%] md:w-[25%] xl:w-[18%] absolute z-5 xl:z-1 bottom-25 xl:bottom-0 -right-0  translate-x-5 -rotate-10">
         <div>
           <img src="/images/Trees/tree-1.png" alt="tree" width={"100%"} />
         </div>
@@ -118,7 +119,7 @@ const Hero = () => {
           <img src="/images/Trees/tree-1-1.png" alt="tree" width={"100%"} />
         </div>
       </div>
-      <div className="w-[30%] md:w-[20%] xl:w-[10%] absolute z-5 xl:z-1 top-[65%] md:top-[70%]  xl:top-[45%] -left-5 rotate-10">
+      <div className="w-[30%] md:w-[20%] xl:w-[10%] absolute z-5 xl:z-1 top-[65%] md:top-[70%]  xl:top-[45%] -left-0 -translate-x-5 rotate-10">
         <div>
           <img src="/images/Trees/tree-1-2.png" alt="tree" width={"100%"} />
         </div>
