@@ -2,7 +2,7 @@
 import { Navbar, Footer, Looding } from "@layouts";
 
 // import components
-import { Hero, About, Collection } from "@components";
+import { Hero, About, Collection } from "@sections";
 
 function App() {
   return (

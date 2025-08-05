@@ -1,5 +1,5 @@
 const Collection = () => {
-  return <div></div>;
+  return <section></section>;
 };
 
 export default Collection;

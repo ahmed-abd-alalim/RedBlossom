@@ -13,29 +13,21 @@ const Footer = () => {
 
   return (
     <footer>
-      <div className="w-55 md:w-65 absolute top-0 right-0 rotate-15 translate-x-12 -translate-y-12">
-        <img
-          src="/images/Trees/tree-7.png"
-          alt="tree"
-          className="w-full absolute top-0"
-        />
+      <div className="w-55 md:w-65 absolute top-0 right-0 rotate-15 translate-x-10 -translate-y-12">
+        <img src="/images/Trees/tree-7.png" alt="tree" className="w-full" />
         <img
           src="/images/Trees/tree-7-1.png"
           alt="tree"
-          className="w-full absolute top-0 -mt-9"
+          className="w-full absolute top-0"
         />
       </div>
 
-      <div className="w-55 md:w-65 absolute top-0 left-0 -rotate-15 -translate-x-12 -translate-y-15">
-        <img
-          src="/images/Trees/tree-7-2.png"
-          alt="tree"
-          className="w-full absolute top-0"
-        />
+      <div className="w-55 md:w-65 absolute top-0 left-0 -rotate-15 -translate-x-10 -translate-y-15">
+        <img src="/images/Trees/tree-7-2.png" alt="tree" className="w-full" />
         <img
           src="/images/Trees/tree-7-2-1.png"
           alt="tree"
-          className="w-full absolute top-0 -mt-9"
+          className="w-full absolute top-0"
         />
       </div>
 
@@ -51,7 +43,7 @@ const Footer = () => {
               <a
                 href="https://www.behance.net/3c27fa3f?fbclid=PAZXh0bgNhZW0CMTEAAaeahNBW4HG2rSoi7O_Gv-tJCo-vxnvT8amc9Lj3tbWYeus_yRoG-2nv6JRyxQ_aem_moh7g8VxbhQRKkhGZZRWTw"
                 target="_blank"
-                className="text-black text-[.71rem] font-bold"
+                className="text-red text-[.71rem] font-bold"
               >
                 Victoria
               </a>
