@@ -27,16 +27,16 @@ const About = () => {
       </div>
 
       <div className="hidden xl:block w-[10%] absolute top-3 left-40">
-        <span className="text-[.6rem] font-medium text-black opacity-30">
+        <p className="text-[.7rem]/3 font-medium text-black opacity-30">
           The collection contains 4 unique characters, each with its own visual
           code and character.
-        </span>
+        </p>
       </div>
       <div className="hidden xl:block w-[10%] absolute bottom-0 right-35 2xl:right-45">
-        <span className="text-[.6rem] font-medium text-black opacity-30">
+        <p className="text-[.7rem]/3 font-medium text-black opacity-30">
           Ideal for digital art lovers, collectors and those who see art as more
           than just a picture.
-        </span>
+        </p>
       </div>
 
       <h2 className="md:hidden font-juzhokaizen uppercase text-center text-black text-[1.35rem] px-5">

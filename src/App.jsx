@@ -2,7 +2,7 @@
 import { Navbar, Footer, Looding } from "@layouts";
 
 // import components
-import { Hero, About, FVideo, Collection } from "@sections";
+import { Hero, About, FVideo, Collection, Utility } from "@sections";
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
         <About />
         <FVideo />
         <Collection />
+        <Utility />
       </main>
       <Footer />
     </div>

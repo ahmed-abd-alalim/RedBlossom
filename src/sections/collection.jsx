@@ -68,7 +68,7 @@ const Collection = () => {
   return (
     <section className="relative bg-[url(/images/bgs/3.webp)] bg-[position:center_center] md:bg-[length:100%] bg-no-repeat lg:px-10 flex flex-col gap-7">
       <div className="relative z-4 w-full flex flex-col md:flex-row justify-center md:justify-between items-center md:px-[3rem]">
-        <h2 className="font-juzhokaizen text-black text-[1.8rem]/8 text-center md:text-start">
+        <h2 className="font-juzhokaizen text-black text-[2rem]/8  lg:text-[2.4rem]/11  text-center md:text-start">
           Meet the Red <br /> Blossom spirits
         </h2>
         <span className=" md:hidden text-[.95rem] text-black text-center opacity-70 mx-15 mt-1">
@@ -77,6 +77,7 @@ const Collection = () => {
         </span>
         <Button title={"Join the Spirits"} style={"hidden md:flex"} />
       </div>
+
       <div
         className="relative z-4 w-full h-full flex keen-slider"
         ref={sliderRef}
@@ -95,6 +96,7 @@ const Collection = () => {
           </div>
         ))}
       </div>
+
       <div className="flex md:hidden justify-center space-x-2">
         {cardData.map((_, idx) => (
           <button
