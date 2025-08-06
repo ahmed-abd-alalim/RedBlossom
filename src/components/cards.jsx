@@ -10,7 +10,7 @@ const Cards = ({ data, style }) => {
         <div className="flex justify-center md:justify-between items-center">
           <h4>"{data.title}"</h4>
           <img
-            src="/public/images/logo.png"
+            src="/images/logo.png"
             alt="logo"
             className="w-8 hidden md:block"
           />

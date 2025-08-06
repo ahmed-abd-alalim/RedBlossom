@@ -8,22 +8,22 @@ import { Button, Cards } from "@components";
 const Collection = () => {
   const cardData = [
     {
-      img: "/public/images/avatars/avatar-1-1.jpg",
+      img: "/images/avatars/avatar-1-1.jpg",
       title: "Empress Xue",
       des: "The sovereign of purity and perfection. Her cold beauty reigns over the ethereal gardens.",
     },
     {
-      img: "/public/images/avatars/avatar-2-1.png",
+      img: "/images/avatars/avatar-2-1.png",
       title: "The Silent Orchid",
       des: "A symbol of serenity and inner harmony. She embodies the balance between nature and spirit.",
     },
     {
-      img: "/public/images/avatars/avatar-3.jpg",
+      img: "/images/avatars/avatar-3.jpg",
       title: "Crimson Lian",
       des: "Radiating passion and elegance. Each petal reflects her unyielding strength and grace.",
     },
     {
-      img: "/public/images/avatars/avatar-4-1.png",
+      img: "/images/avatars/avatar-4-1.png",
       title: "Blossom Warden",
       des: "The eternal guardian of sacred blossoms. Her presence protects the fragile beauty of the realm.",
     },
