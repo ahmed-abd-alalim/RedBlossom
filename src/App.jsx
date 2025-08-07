@@ -2,7 +2,7 @@
 import { Navbar, Footer, Looding } from "@layouts";
 
 // import components
-import { Hero, About, FVideo, Collection, Utility } from "@sections";
+import { Hero, About, FVideo, Collection, Utility, SVideo } from "@sections";
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
         <FVideo />
         <Collection />
         <Utility />
+        <SVideo />
       </main>
       <Footer />
     </div>
