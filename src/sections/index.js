@@ -4,3 +4,4 @@ export { default as FVideo } from "./fvideo";
 export { default as Collection } from "./collection";
 export { default as Utility } from "./utility";
 export { default as SVideo } from "./svideo";
+export { default as HowToGetIt } from "./howToGetIt";

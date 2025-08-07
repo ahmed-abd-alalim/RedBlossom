@@ -41,7 +41,7 @@ const Utility = () => {
   }, [instanceRef]);
 
   return (
-    <section className="relative xl:bg-[url(/images/bgs/4.webp)] bg-[position:center_top] md:bg-[length:100%] bg-no-repeat">
+    <section className="relative xl:bg-[url(/images/bgs/4.webp)] bg-[position:center_center] md:bg-[length:100%] bg-no-repeat">
       <h2 className="xl:hidden font-juzhokaizen text-black text-[2rem]/8 lg:text-[2.4rem]/11 text-center">
         What do you <br />
         get by owning
@@ -155,7 +155,7 @@ const Utility = () => {
         </div>
       </div>
 
-      <div className="w-[35%] md:w-[30%] xl:w-[22%] absolute z-5 xl:z-1 bottom-55  md:bottom-70 -rotate-5 -right-0 translate-x-9">
+      <div className="w-[35%] md:w-[30%] xl:w-[22%] absolute z-5 xl:z-1 bottom-3 scale-y-[-1] md:scale-100  md:bottom-200 xl:bottom-70 rotate-25 md:-rotate-5 -right-0 translate-x-9">
         <div>
           <img src="/images/Trees/tree-4.png" alt="tree" width={"100%"} />
         </div>
@@ -163,7 +163,7 @@ const Utility = () => {
           <img src="/images/Trees/tree-4-1.png" alt="tree" width={"100%"} />
         </div>
       </div>
-      <div className="w-[35%] md:w-[30%] xl:w-[25%] absolute z-5 xl:z-1  bottom-55  md:bottom-70 -left-0 -translate-x-13">
+      <div className="w-[35%] md:w-[30%] xl:w-[25%] absolute z-5 xl:z-1  bottom-12 scale-y-[-1] md:scale-100  md:bottom-190 xl:bottom-70 -left-0 -translate-x-13">
         <div>
           <img src="/images/Trees/tree-4-2.png" alt="tree" width={"100%"} />
         </div>
