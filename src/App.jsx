@@ -10,6 +10,7 @@ import {
   Utility,
   SVideo,
   HowToGetIt,
+  FAQ,
 } from "@sections";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Utility />
         <SVideo />
         <HowToGetIt />
+        <FAQ />
       </main>
       <Footer />
     </div>

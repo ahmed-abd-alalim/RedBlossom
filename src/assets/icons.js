@@ -2,6 +2,7 @@ import { RiDiscordFill, RiInstagramFill, RiTwitterXFill } from "react-icons/ri";
 import { HiMiniArrowUpRight } from "react-icons/hi2";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
+import { RxChevronDown } from "react-icons/rx";
 
 export {
   RiDiscordFill,
@@ -10,4 +11,5 @@ export {
   HiMiniArrowUpRight,
   HiOutlineMenuAlt3,
   IoClose,
+  RxChevronDown,
 };
