@@ -6,7 +6,7 @@ import { CycleButton, Button } from "@/components";
 
 const Hero = () => {
   return (
-    <section className="relative xl:bg-[url(/images/bgs/1.webp)] bg-[position:center_top] md:bg-[length:100%] bg-no-repeat grid grid-cols-1 xl:grid-cols-[18%_64%_23%]">
+    <section className="hero-section relative xl:bg-[url(/images/bgs/1.webp)] bg-[position:center_top] md:bg-[length:100%] bg-no-repeat grid grid-cols-1 xl:grid-cols-[18%_64%_23%]">
       <div className="hidden xl:flex flex-col gap-15 justify-center items-center relative z-3">
         <div>
           <h1 className="text-[3rem]/12 text-black font-juzhokaizen scale-135 translate-x-[4.2rem] 2xl:scale-140 2xl:translate-x-[6rem]">
@@ -39,7 +39,10 @@ const Hero = () => {
           </video>
         </div>
 
-        <div className="absolute z-1 abs-center w-[clamp(22rem,_71.43vw,_42rem)] h-[clamp(22rem,_71.43vw,_42rem)] rounded-full bg-radial-[at_50%_50%] from-light-red to-dark-red" />
+        <div
+          className="absolute z-1 abs-center w-[clamp(22rem,_71.43vw,_42rem)] h-[clamp(22rem,_71.43vw,_42rem)] rounded-full bg-[url('/images/more/dragon.png'),radial-gradient(at_50%_50%,var(--color-light-red),var(--color-dark-red))]
+            bg-center bg-no-repeat [background-size:100%]"
+        />
       </div>
 
       <div className="hidden relative z-4 xl:flex flex-col justify-center items-center gap-12 pt-20 ">
@@ -70,7 +73,7 @@ const Hero = () => {
             </h5>
           </div>
           <div className="w-full flex-between">
-            <div className="avatar-cycle scale-145 flex-center pt-5">
+            <div className="avatar-cycle scale-145 flex-center">
               <img
                 src="/images/avatars/avatar-1-1.jpg"
                 alt="avatar"
@@ -111,6 +114,7 @@ const Hero = () => {
         />
       </div>
 
+      {/* tree */}
       <div className="w-[30%] md:w-[25%] xl:w-[18%] absolute z-5 xl:z-1 bottom-25 xl:bottom-0 -right-0  translate-x-5 -rotate-10">
         <div>
           <img src="/images/Trees/tree-1.png" alt="tree" width={"100%"} />

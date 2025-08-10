@@ -132,7 +132,7 @@ const HowToGetIt = () => {
         <p className="text-[.95rem] text-black text-center opacity-50 mx-8 mt-1">
           Become part of the circle before <br /> they disappear forever.
         </p>
-        <Button title={"Join the Spirits"} style={"scale-110 mt-5"} />
+        <Button title={"Join the Spirits"} style={"m-auto scale-110 mt-5"} />
       </div>
     </section>
   );

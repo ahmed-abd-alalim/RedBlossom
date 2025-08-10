@@ -11,6 +11,7 @@ import {
   SVideo,
   HowToGetIt,
   FAQ,
+  TVideo,
 } from "@sections";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <SVideo />
         <HowToGetIt />
         <FAQ />
+        <TVideo />
       </main>
       <Footer />
     </div>

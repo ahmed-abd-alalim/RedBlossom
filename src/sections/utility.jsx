@@ -69,7 +69,10 @@ const Utility = () => {
           an NFT?
         </h2>
 
-        <div className="abs-center z-1 w-[clamp(20rem,_71.43vw,_40rem)] h-[clamp(20rem,_71.43vw,_40rem)] rounded-full bg-radial-[at_50%_50%] from-light-red to-dark-red" />
+        <div
+          className="abs-center z-1 w-[clamp(20rem,_71.43vw,_40rem)] h-[clamp(20rem,_71.43vw,_40rem)] rounded-full bg-[url('/images/more/dragon.png'),radial-gradient(at_50%_50%,var(--color-light-red),var(--color-dark-red))]
+            bg-center bg-no-repeat [background-size:100%]"
+        />
       </div>
 
       <div className="hidden xl:block w-[10%] absolute top-20 left-30">

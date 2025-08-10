@@ -75,7 +75,7 @@ const Collection = () => {
           Unique spirits, immortalized in fine details, waiting to become part
           of your collection.
         </span>
-        <Button title={"Join the Spirits"} style={"hidden md:flex"} />
+        <Button title={"Join the Spirits"} style={"hidden md:flex scale-110"} />
       </div>
 
       <div
@@ -113,7 +113,7 @@ const Collection = () => {
 
       <Button
         title={"Join the Spirits"}
-        style={"flex md:hidden scale-110 mt-1"}
+        style={"m-auto md:hidden scale-110 mt-1"}
       />
 
       <div className="hidden xl:block w-[15%] absolute z-1 top-15 -right-0 translate-x-15">

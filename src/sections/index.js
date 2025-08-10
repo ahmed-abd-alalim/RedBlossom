@@ -6,3 +6,4 @@ export { default as Utility } from "./utility";
 export { default as SVideo } from "./svideo";
 export { default as HowToGetIt } from "./howToGetIt";
 export { default as FAQ } from "./faq";
+export { default as TVideo } from "./tvideo";

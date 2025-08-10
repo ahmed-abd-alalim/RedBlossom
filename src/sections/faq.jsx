@@ -32,8 +32,8 @@ const Faq = () => {
                 open <HiMiniArrowUpRight className="text-[1.1rem]" />
               </span>
             </div>
-            <div className="w-50 h-55 bg-red rounded-3xl shadow-[5px_3px_10px_1px] shadow-soft-black flex flex-col justify-between px-8 py-7">
-              <h3 className="text-[.6rem] text-white">
+            <div className="w-50 h-55 bg-[url('/images/more/button-bg.png')] bg-red bg-center bg-no-repeat [background-size:110%] rounded-3xl shadow-[5px_3px_10px_1px] shadow-soft-black flex flex-col justify-between p-7">
+              <h3 className="text-[.7rem] text-white">
                 Main focus is soulful digital presence, but exclusive perks may
                 appear.
               </h3>

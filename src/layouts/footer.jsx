@@ -101,7 +101,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="relative bg-red h-[20rem] md:h-[17rem] lg:h-[16rem] 2xl:h-[17rem] mt-32 lg:mt-2 flex flex-col items-center justify-end text-center py-3 lg:py-0">
+      <div className="relative bg-[url('/images/more/footer.png')] bg-red bg-center bg-repeat  [background-size:20rem] md:[background-size:30rem] xl:[background-size:25rem]  h-[20rem] md:h-[17rem] lg:h-[16rem] 2xl:h-[17rem] mt-32 lg:mt-2 flex flex-col items-center justify-end text-center py-3 lg:py-0">
         <div className="absolute -top-30 lg:-top-40 left-1/2 transform -translate-x-1/2 w-50 h-50 lg:w-65 lg:h-65 rounded-full overflow-hidden border-18 border-soft-white">
           <img
             src="/images/avatars/avatar-2-1.png"
