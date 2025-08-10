@@ -1,3 +1,6 @@
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
 // import icon
 import { HiMiniArrowUpRight } from "@/assets/icons";
 
@@ -5,6 +8,45 @@ import { HiMiniArrowUpRight } from "@/assets/icons";
 import { CycleButton, Button } from "@/components";
 
 const Hero = () => {
+  // useGSAP(() => {
+
+  //   gsap.set(".mask-logo", {
+  //     marginTop: "-100vh",
+  //     opacity: 0,
+  //   });
+
+  //   gsap.set(".entrance-message", { marginTop: "0vh" });
+
+  //   window.addEventListener("load", () => {
+  //     gsap.fromTo(
+  //       ".scale-out",
+  //       {
+  //         scale: 1.35,
+  //       },
+  //       {
+  //         scale: 1.25,
+  //         ease: "power1.inOut",
+  //         duration: 1,
+  //       }
+  //     );
+  //   });
+
+  //   const tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: ".hero-section",
+  //       start: "top top",
+  //       scrub: 2.5,
+  //       end: "+=200%",
+  //       pin: true,
+  //     },
+  //   });
+
+  //   tl.to(".fade-out", { opacity: 0, ease: "power1.inOut" })
+  //     .to(".scale-out", { scale: 1, ease: "power1.inOut" })
+  //     .to(".mask-wrapper", { maskSize, ease: "power1.inOut" }, "<")
+  //     .to(".mask-wrapper", { opacity: 0 });
+  // });
+
   return (
     <section className="hero-section relative xl:bg-[url(/images/bgs/1.webp)] bg-[position:center_top] md:bg-[length:100%] bg-no-repeat grid grid-cols-1 xl:grid-cols-[18%_64%_23%]">
       <div className="hidden xl:flex flex-col gap-15 justify-center items-center relative z-3">

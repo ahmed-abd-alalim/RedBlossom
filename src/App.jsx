@@ -1,3 +1,6 @@
+import gsap from "gsap";
+import { ScrollTrigger, SplitText } from "gsap/all";
+
 // import layouts
 import { Navbar, Footer, Looding } from "@layouts";
 
@@ -13,6 +16,8 @@ import {
   FAQ,
   TVideo,
 } from "@sections";
+
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 function App() {
   return (
