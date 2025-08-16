@@ -2,6 +2,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import ScrollSmoother from "gsap/ScrollSmoother";
 import { useEffect } from "react";
+import { Element } from "react-scroll";
 
 // import layouts
 import { Navbar, Footer, Looding } from "@layouts";
@@ -48,13 +49,21 @@ function App() {
         <Navbar />
         <main>
           <Hero />
-          <About />
+          <Element name="about">
+            <About />
+          </Element>
           <FVideo />
-          <Collection />
-          <Utility />
+          <Element name="collection">
+            <Collection />
+          </Element>
+          <Element name="utility">
+            <Utility />
+          </Element>
           <SVideo />
           <HowToGetIt />
-          <FAQ />
+          <Element name="faq">
+            <FAQ />
+          </Element>
         </main>
         <Footer />
       </div>

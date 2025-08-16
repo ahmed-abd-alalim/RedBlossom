@@ -1,5 +1,6 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { Link } from "react-scroll";
 
 // import config
 import config from "@/assets/config.json";
@@ -78,16 +79,24 @@ const Footer = () => {
             <h4>menu</h4>
             <ul>
               <li className="hover:text-dark-red focus:text-dark-red hover:opacity-80 focus:opacity-80 transition-all duration-500">
-                about
+                <Link to="about" smooth={true}>
+                  about
+                </Link>
               </li>
               <li className="hover:text-dark-red  focus:text-dark-red hover:opacity-80  focus:opacity-80 transition-all duration-500">
-                collection
+                <Link to="collection" smooth={true}>
+                  collection
+                </Link>
               </li>
               <li className="hover:text-dark-red focus:text-dark-red hover:opacity-80 focus:opacity-80 transition-all duration-500">
-                utility
+                <Link to="utility" smooth={true}>
+                  utility
+                </Link>
               </li>
               <li className="uppercase hover:text-dark-red focus:text-dark-red hover:opacity-80 focus:opacity-80 transition-all duration-500">
-                faq
+                <Link to="faq" smooth={true}>
+                  faq
+                </Link>
               </li>
             </ul>
           </div>

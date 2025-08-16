@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { Link } from "react-scroll";
 
 // import icon
 import {
@@ -124,7 +125,7 @@ const Navbar = () => {
           </div>
           <div className="hidden lg:block">
             <ul>
-              <li className="relative pg-link">
+              <Link to="about" smooth={true} className="relative pg-link">
                 <div className="w-12 h-full absolute top-0 left-0 -translate-x-1 flex justify-center items-center px-2">
                   <img
                     src="/images/navbar/left.png"
@@ -138,8 +139,8 @@ const Navbar = () => {
                   />
                 </div>
                 about
-              </li>
-              <li className="relative pg-link">
+              </Link>
+              <Link to="collection" smooth={true} className="relative pg-link">
                 <div className="w-11 h-full absolute top-0 left-0 -translate-x-3 flex justify-between items-center">
                   <img
                     src="/images/navbar/left.png"
@@ -153,13 +154,13 @@ const Navbar = () => {
                   />
                 </div>
                 collection
-              </li>
+              </Link>
             </ul>
           </div>
         </div>
         <div className="flex-right lg:gap-15">
           <ul className="hidden lg:flex">
-            <li className="relative pg-link">
+            <Link to="utility" smooth={true} className="relative pg-link">
               <div className="w-12 h-full absolute top-0 left-0 -translate-x-6 flex justify-between items-center px-2">
                 <img
                   src="/images/navbar/left.png"
@@ -173,8 +174,8 @@ const Navbar = () => {
                 />
               </div>
               utility
-            </li>
-            <li className="uppercase relative pg-link">
+            </Link>
+            <Link to="faq" smooth={true} className="uppercase relative pg-link">
               <div className="w-13 h-full absolute top-0 left-0 -translate-x-7 flex justify-between items-center px-3">
                 <img
                   src="/images/navbar/left.png"
@@ -188,7 +189,7 @@ const Navbar = () => {
                 />
               </div>
               faq
-            </li>
+            </Link>
           </ul>
           <div className="hidden lg:flex lg:flex-center gap-3">
             {socialInfo.map((iconInfo, _) => {
@@ -226,17 +227,33 @@ const Navbar = () => {
         } `}
       >
         <ul className="flex flex-col justify-center items-center gap-10 md:gap-15">
-          <li className="capitalize text-black font-juzhokaizen text-[1.2rem] md:text-[1.8rem] cursor-pointer">
-            about
+          <li className="capitalize text-black font-juzhokaizen text-[1.2rem] md:text-[1.8rem] cursor-pointer hover:text-red focus:text-red transition-all duration-500">
+            <Link to="about" smooth={true} onClick={() => setMenuIsOpen(false)}>
+              about
+            </Link>
           </li>
-          <li className="capitalize text-black font-juzhokaizen text-[1.2rem] md:text-[1.8rem] cursor-pointer">
-            collection
+          <li className="capitalize text-black font-juzhokaizen text-[1.2rem] md:text-[1.8rem] cursor-pointer hover:text-red focus:text-red  transition-all duration-500">
+            <Link
+              to="collection"
+              smooth={true}
+              onClick={() => setMenuIsOpen(false)}
+            >
+              collection
+            </Link>
           </li>
-          <li className="capitalize text-black font-juzhokaizen text-[1.2rem]  md:text-[1.8rem] cursor-pointer">
-            utility
+          <li className="capitalize text-black font-juzhokaizen text-[1.2rem]  md:text-[1.8rem] cursor-pointer hover:text-red focus:text-red  transition-all duration-500">
+            <Link
+              to="utility"
+              smooth={true}
+              onClick={() => setMenuIsOpen(false)}
+            >
+              utility
+            </Link>
           </li>
-          <li className="uppercase  text-black font-juzhokaizen text-[1.2rem]  md:text-[1.8rem] cursor-pointer">
-            faq
+          <li className="uppercase text-black font-juzhokaizen text-[1.2rem]  md:text-[1.8rem] cursor-pointer hover:text-red focus:text-red  transition-all duration-500">
+            <Link to="faq" smooth={true} onClick={() => setMenuIsOpen(false)}>
+              faq
+            </Link>
           </li>
         </ul>
       </div>

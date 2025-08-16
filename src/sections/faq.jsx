@@ -1,10 +1,19 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useState } from "react";
 
 // import icon
 import { HiMiniArrowUpRight, RxChevronDown } from "@assets/icons";
 
 const Faq = () => {
+  const [buttonvisaple, setButtonvisaple] = useState({
+    f: 0,
+    s: 0,
+    t: 0,
+    fi: 0,
+    se: 0,
+  });
+
   useGSAP(() => {
     gsap.set([".faq-tree", ".faq-title", ".faq-sm-title"], {
       opacity: 0,
@@ -94,6 +103,16 @@ const Faq = () => {
     });
   });
 
+  const toggleButton = (key) => {
+    setButtonvisaple((prev) => {
+      const reset = { f: 0, s: 0, t: 0, fi: 0, se: 0 };
+      return {
+        ...reset,
+        [key]: prev[key] === 0 ? 1 : 0,
+      };
+    });
+  };
+
   return (
     <section className="faq-section relative bg-[url(/images/bgs/6.webp)] bg-[position:center_lefy] md:bg-[position:center_center] bg-[length:300%]  xl:bg-[length:110%] bg-no-repeat h-[100vh] bg-soft-white flex flex-col justify-center gap-10">
       <div className="text-center xl:hidden px-2 faq-title">
@@ -167,12 +186,19 @@ const Faq = () => {
       </div>
 
       <div className="relative z-3 xl:hidden mt-8">
-        <div className="faq-sm-card w-[85%] md:w-[60%] h-18 bg-white rounded-3xl shadow-[5px_3px_10px_1px] shadow-soft-black px-6 py-8 m-auto overflow-hidden group">
+        <div
+          className={`${
+            buttonvisaple.f ? "h-50" : "h-18"
+          } faq-sm-card w-[85%] md:w-[60%]  bg-white rounded-3xl shadow-[5px_3px_10px_1px] shadow-soft-black px-6 py-8 m-auto overflow-hidden group transition-all duration-400`}
+        >
           <div className="h-[35%] flex justify-between items-center cursor-pointer group-[.h-18]:mt-2">
             <h3 className="w-[85%] font-juzhokaizen text-black text-[1.1rem]/5">
               How many NFTs will be in the collection?
             </h3>
-            <RxChevronDown className="text-red rotate-180 text-[1.6rem] group-[.h-18]:text-black group-[.h-18]:rotate-0" />
+            <RxChevronDown
+              className="text-red rotate-180 text-[1.6rem] group-[.h-18]:text-black group-[.h-18]:rotate-0 transition-all duration-400"
+              onClick={() => toggleButton("f")}
+            />
           </div>
           <div className="h-[65%] mt-5 group-[.h-18]:hidden">
             <p className="text-black text-[.8rem] lg:text-[.9rem] opacity-60">
@@ -183,12 +209,19 @@ const Faq = () => {
           </div>
         </div>
 
-        <div className="faq-sm-card w-[85%] md:w-[60%] h-18 bg-white rounded-3xl shadow-[5px_3px_10px_1px] shadow-soft-black px-6 py-8 mt-4 m-auto overflow-hidden group">
+        <div
+          className={`${
+            buttonvisaple.s ? "h-50" : "h-18"
+          } faq-sm-card w-[85%] md:w-[60%] bg-white rounded-3xl shadow-[5px_3px_10px_1px] shadow-soft-black px-6 py-8 mt-4 m-auto overflow-hidden group transition-all duration-400`}
+        >
           <div className="h-[35%] flex justify-between items-center cursor-pointer group-[.h-18]:mt-2">
             <h3 className="w-[85%] font-juzhokaizen text-black text-[1.1rem]/5">
               What chain is used?
             </h3>
-            <RxChevronDown className="text-red rotate-180 text-[1.6rem] group-[.h-18]:text-black group-[.h-18]:rotate-0" />
+            <RxChevronDown
+              className="text-red rotate-180 text-[1.6rem] group-[.h-18]:text-black group-[.h-18]:rotate-0 transition-all duration-400"
+              onClick={() => toggleButton("s")}
+            />
           </div>
           <div className="h-[65%] mt-5 group-[.h-18]:hidden">
             <p className="text-black text-[.8rem] lg:text-[.9rem] opacity-60">
@@ -199,12 +232,19 @@ const Faq = () => {
           </div>
         </div>
 
-        <div className="faq-sm-card w-[85%] md:w-[60%] h-18 bg-white rounded-3xl shadow-[5px_3px_10px_1px] shadow-soft-black px-6 py-8 mt-4 m-auto overflow-hidden group">
+        <div
+          className={`${
+            buttonvisaple.t ? "h-50" : "h-18"
+          } faq-sm-card w-[85%] md:w-[60%] bg-white rounded-3xl shadow-[5px_3px_10px_1px] shadow-soft-black px-6 py-8 mt-4 m-auto overflow-hidden group transition-all duration-400`}
+        >
           <div className="h-[35%] flex justify-between items-center cursor-pointer group-[.h-18]:mt-2">
             <h3 className=" w-[85%] font-juzhokaizen text-black text-[1.1rem]/5">
               Is this just art of will there be utilities?
             </h3>
-            <RxChevronDown className="text-red rotate-180 text-[1.6rem] group-[.h-18]:text-black group-[.h-18]:rotate-0" />
+            <RxChevronDown
+              className="text-red rotate-180 text-[1.6rem] group-[.h-18]:text-black group-[.h-18]:rotate-0 transition-all duration-400"
+              onClick={() => toggleButton("t")}
+            />
           </div>
           <div className="h-[65%] mt-5 group-[.h-18]:hidden">
             <p className="text-black text-[.8rem] lg:text-[.9rem] opacity-60">
@@ -215,12 +255,19 @@ const Faq = () => {
           </div>
         </div>
 
-        <div className="faq-sm-card w-[85%] md:w-[60%] h-18 bg-white rounded-3xl shadow-[5px_3px_10px_1px] shadow-soft-black px-6 py-8 mt-4 m-auto overflow-hidden group">
+        <div
+          className={`${
+            buttonvisaple.fi ? "h-50" : "h-18"
+          } faq-sm-card w-[85%] md:w-[60%] bg-white rounded-3xl shadow-[5px_3px_10px_1px] shadow-soft-black px-6 py-8 mt-4 m-auto overflow-hidden group transition-all duration-400`}
+        >
           <div className="h-[35%] flex justify-between items-center cursor-pointer group-[.h-18]:mt-2">
             <h3 className="w-[85%] font-juzhokaizen text-black text-[1.1rem]/5">
               When will the mint start?
             </h3>
-            <RxChevronDown className="text-red rotate-180 text-[1.6rem] group-[.h-18]:text-black group-[.h-18]:rotate-0" />
+            <RxChevronDown
+              className="text-red rotate-180 text-[1.6rem] group-[.h-18]:text-black group-[.h-18]:rotate-0 transition-all duration-400"
+              onClick={() => toggleButton("fi")}
+            />
           </div>
           <div className="h-[65%] mt-5 group-[.h-18]:hidden">
             <p className="text-black text-[.8rem] lg:text-[.9rem] opacity-60">
@@ -231,12 +278,19 @@ const Faq = () => {
           </div>
         </div>
 
-        <div className="faq-sm-card w-[85%] md:w-[60%] h-18 bg-white rounded-3xl shadow-[5px_3px_10px_1px] shadow-soft-black px-6 py-8 mt-4 m-auto overflow-hidden group">
+        <div
+          className={`${
+            buttonvisaple.se ? "h-50" : "h-18"
+          } faq-sm-card w-[85%] md:w-[60%] bg-white rounded-3xl shadow-[5px_3px_10px_1px] shadow-soft-black px-6 py-8 mt-4 m-auto overflow-hidden group transition-all duration-400`}
+        >
           <div className="h-[35%] flex justify-between items-center cursor-pointer group-[.h-18]:mt-2">
             <h3 className="w-[85%] font-juzhokaizen text-black text-[1.1rem]/5">
               How can I get early access?
             </h3>
-            <RxChevronDown className="text-red rotate-180 text-[1.6rem] group-[.h-18]:text-black group-[.h-18]:rotate-0" />
+            <RxChevronDown
+              className="text-red rotate-180 text-[1.6rem] group-[.h-18]:text-black group-[.h-18]:rotate-0 transition-all duration-400"
+              onClick={() => toggleButton("se")}
+            />
           </div>
           <div className="h-[65%] mt-5 group-[.h-18]:hidden">
             <p className="text-black text-[.8rem] lg:text-[.9rem] opacity-60">

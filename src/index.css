@@ -75,6 +75,7 @@
     @apply w-full h-[5rem] md:h-[6rem] absolute top-0 left-0 z-100 flex justify-between items-center bg-transparent px-5 md:px-10;
     ul {
       @apply flex justify-center items-center gap-10;
+      .pg-link,
       li {
         @apply capitalize text-black font-medium text-[.8rem] cursor-pointer;
       }
