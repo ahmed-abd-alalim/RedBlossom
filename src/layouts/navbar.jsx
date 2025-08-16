@@ -20,12 +20,6 @@ const Navbar = () => {
     { icon: RiTwitterXFill, url: "#" },
   ];
 
-  console.log(
-    "\n %c ✦ Enjoy watching ✦ ",
-    "background: #f7a617; color: #fffaf5; padding: 5px 0; margin-right: 5px;",
-    "https://ahmedabdalalim.pages.dev \n\n "
-  );
-
   useGSAP(() => {
     // Initially hide nav
     gsap.set("nav", { opacity: 0 });
