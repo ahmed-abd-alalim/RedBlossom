@@ -108,17 +108,17 @@ const Utility = () => {
 
     tl.to(".utiluty-cycle", {
       y: "0vh",
-      duration: 5,
+      duration: 10,
       ease: "power1.inOut",
     })
       .to(".utiluty-cycle", {
         scale: 1,
-        duration: 5,
+        duration: 10,
         ease: "power1.inOut",
       })
       .to(".utility-avatar", {
         opacity: 1,
-        duration: 2,
+        duration: 5,
         ease: "power1.inOut",
       })
       .to(".utility-avatar-title", {
