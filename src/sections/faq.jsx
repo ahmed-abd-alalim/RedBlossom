@@ -30,7 +30,7 @@ const Faq = () => {
       y: -15,
     });
 
-    gsap.set(".faq-section", { opacity: 0, marginTop: "20vh" });
+    gsap.set(".faq-section", { opacity: 0 });
 
     gsap.to(".faq-tree", {
       scrollTrigger: {
