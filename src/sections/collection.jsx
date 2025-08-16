@@ -1,6 +1,8 @@
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import { useEffect, useState } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 // import components
 import { Button, Cards } from "@components";
@@ -65,9 +67,81 @@ const Collection = () => {
     return () => clearInterval(interval);
   }, [instanceRef]);
 
+  useGSAP(() => {
+    gsap.set(".collection-tree", {
+      opacity: 0,
+    });
+
+    gsap.set(
+      [
+        ".collection-contant",
+        ".collection-navebar",
+        ".collection-scroller",
+        ".collection-small-button",
+      ],
+      { opacity: 0 }
+    );
+
+    gsap.set(".collection-section", { marginTop: "25vh" });
+
+    gsap.to(".collection-tree", {
+      scrollTrigger: {
+        trigger: ".collection-tree",
+        toggleActions: "restart",
+      },
+      opacity: 1,
+      duration: 2,
+      ease: "power1.inOut",
+      maskImage:
+        "radial-gradient(circle at 50% 100vh, black 94%, transparent 100%)",
+    });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".collection-section",
+        start: "top top",
+        end: "bottom +=30%",
+        scrub: 2.5,
+        pin: true,
+        // markers: true,
+      },
+    });
+    tl.to(
+      ".collection-contant",
+      {
+        delay: 0.5,
+        opacity: 1,
+        duration: 10,
+        ease: "power1.inOut",
+        maskImage:
+          "radial-gradient(circle at 50% 0vh, black 65%, transparent 100%)",
+      },
+      "<"
+    )
+      .to(
+        ".collection-navebar",
+        {
+          opacity: 1,
+          duration: 10,
+          ease: "power1.inOut",
+        },
+        "<"
+      )
+      .to(".collection-scroller", {
+        opacity: 1,
+        duration: 10,
+        ease: "power1.inOut",
+      })
+      .to(".collection-small-button", {
+        opacity: 1,
+        duration: 10,
+        ease: "power1.inOut",
+      });
+  });
+
   return (
-    <section className="relative bg-[url(/images/bgs/3.webp)] bg-[position:center_center] md:bg-[length:100%] bg-no-repeat lg:px-10 flex flex-col gap-7">
-      <div className="relative z-4 w-full flex flex-col md:flex-row justify-center md:justify-between items-center md:px-[3rem]">
+    <section className="collection-section relative bg-[url(/images/bgs/3.webp)] bg-[position:center_center] md:bg-[length:100%] bg-no-repeat lg:px-10 flex flex-col justify-center pt-4 md:pt-0  gap-2 md:gap-20 lg:gap-25 xl:gap-15 2xl:gap-5  h-[110vh] md:h-[100vh] bg-soft-white">
+      <div className="collection-navebar relative z-4 w-full flex flex-col md:flex-row justify-center md:justify-between items-center md:px-[3rem]">
         <h2 className="font-juzhokaizen text-black text-[2rem]/8  lg:text-[2.4rem]/11  text-center md:text-start">
           Meet the Red <br /> Blossom spirits
         </h2>
@@ -79,7 +153,7 @@ const Collection = () => {
       </div>
 
       <div
-        className="relative z-4 w-full h-full flex keen-slider"
+        className="collection-contant relative z-4 w-full flex keen-slider"
         ref={sliderRef}
       >
         {cardData.map((_, index) => (
@@ -97,7 +171,7 @@ const Collection = () => {
         ))}
       </div>
 
-      <div className="flex md:hidden justify-center space-x-2">
+      <div className="collection-scroller flex md:hidden justify-center space-x-2 mt-3">
         {cardData.map((_, idx) => (
           <button
             key={idx}
@@ -111,24 +185,26 @@ const Collection = () => {
         ))}
       </div>
 
-      <Button
-        title={"Join the Spirits"}
-        style={"m-auto md:hidden scale-110 mt-1"}
-      />
+      <div className="collection-small-button">
+        <Button
+          title={"Join the Spirits"}
+          style={"m-auto md:hidden scale-110 mt-4"}
+        />
+      </div>
 
-      <div className="hidden xl:block w-[15%] absolute z-1 top-15 -right-0 translate-x-15">
+      <div className="hidden md:block w-[30%] xl:w-[15%] absolute z-1 top-35 -right-0 translate-x-15">
         <div>
           <img src="/images/Trees/tree-3.png" alt="tree" width={"100%"} />
         </div>
-        <div className="w-full abs-center">
+        <div className="w-full abs-center collection-tree">
           <img src="/images/Trees/tree-3-1.png" alt="tree" width={"100%"} />
         </div>
       </div>
-      <div className="hidden xl:block w-[20%] absolute z-1  -top-20 -left-0 -translate-x-15">
+      <div className="hidden md:block  w-[40%] xl:w-[20%] absolute z-1  top-15 -left-0 -translate-x-15">
         <div>
           <img src="/images/Trees/tree-3-2.png" alt="tree" width={"100%"} />
         </div>
-        <div className="w-full abs-center">
+        <div className="w-full abs-center collection-tree">
           <img src="/images/Trees/tree-3-2-1.png" alt="tree" width={"100%"} />
         </div>
       </div>

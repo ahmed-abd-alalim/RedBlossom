@@ -17,6 +17,7 @@ export default defineConfig({
       "@sections": resolve(__dirname, "src/sections"),
       "@layouts": resolve(__dirname, "src/layouts"),
       "@assets": resolve(__dirname, "src/assets"),
+      "@utils": resolve(__dirname, "src/utils"),
     },
   },
 });

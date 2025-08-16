@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 // import icon
 import {
@@ -18,20 +20,109 @@ const Navbar = () => {
     { icon: RiTwitterXFill, url: "#" },
   ];
 
-  // console.log(
-  //   "\n %c ✦ Enjoy watching ✦ ",
-  //   "background: #f7a617; color: #fffaf5; padding: 5px 0; margin-right: 5px;",
-  //   "https://ahmedabdalalim.pages.dev \n\n "
-  // );
+  console.log(
+    "\n %c ✦ Enjoy watching ✦ ",
+    "background: #f7a617; color: #fffaf5; padding: 5px 0; margin-right: 5px;",
+    "https://ahmedabdalalim.pages.dev \n\n "
+  );
+
+  useGSAP(() => {
+    // Initially hide nav
+    gsap.set("nav", { opacity: 0 });
+
+    gsap.to("nav", {
+      scrollTrigger: {
+        trigger: "nav",
+        toggleActions: "restart",
+      },
+      delay: 1,
+      duration: 1,
+      opacity: 1,
+      ease: "power1.inOut",
+      maskImage:
+        "radial-gradient(circle at 50% 100vh, black 95%, transparent 100%)",
+    });
+
+    // Create scroll-triggered timeline
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "nav",
+        start: "top top",
+        end: "bottom",
+        scrub: 2,
+        // markers: true,
+      },
+    });
+
+    // Fade nav out on scroll
+    tl.to("nav", {
+      duration: 1,
+      ease: "power1.inOut",
+      maskImage:
+        "radial-gradient(circle at 50% 0vh, black 30%, transparent 0%)",
+    });
+  });
+
+  useEffect(() => {
+    const pgLinks = document.querySelectorAll(".pg-link > div");
+    const handlers = [];
+
+    pgLinks.forEach((pgLink) => {
+      gsap.set(pgLink, { opacity: 0 });
+
+      const onEnter = () => {
+        gsap.to(pgLink, {
+          opacity: 1,
+          duration: 1,
+        });
+      };
+
+      const onLeave = () => {
+        gsap.to(pgLink, {
+          opacity: 0,
+          duration: 1,
+        });
+      };
+
+      pgLink.addEventListener("mouseenter", onEnter);
+      pgLink.addEventListener("mouseleave", onLeave);
+
+      handlers.push({ pgLink, onEnter, onLeave });
+    });
+
+    // Cleanup function to remove event listeners on unmount
+    return () => {
+      handlers.forEach(({ pgLink, onEnter, onLeave }) => {
+        pgLink.removeEventListener("mouseenter", onEnter);
+        pgLink.removeEventListener("mouseleave", onLeave);
+      });
+    };
+  }, []); // Empty dependency array to run once on mount
+
+  useEffect(() => {
+    function preventScroll(event) {
+      event.preventDefault();
+      window.scrollTo(0, 0);
+    }
+    if (menuIsOpen) {
+      window.addEventListener("scroll", preventScroll, { passive: false });
+    } else {
+      window.removeEventListener("scroll", preventScroll, { passive: false });
+    }
+    // Cleanup on unmount
+    return () => {
+      window.removeEventListener("scroll", preventScroll, { passive: false });
+    };
+  }, [menuIsOpen]);
 
   return (
     <>
       <nav
-        className={
+        className={`fixed ${
           menuIsOpen
-            ? "fixed bg-soft-white border-b-1 border-dark-two-red lg:absolute lg:bg-transparent lg:border-b-0 transition-all duration-250 lg:transition-none"
+            ? " bg-soft-white border-b-1 border-dark-two-red lg:absolute lg:bg-transparent lg:border-b-0 transition-all duration-250 lg:transition-none"
             : "bg-transparent"
-        }
+        }`}
       >
         <div className="flex-left lg:gap-15">
           <div className="w-[3.8rem] md:w-[4.3rem]">
@@ -39,15 +130,71 @@ const Navbar = () => {
           </div>
           <div className="hidden lg:block">
             <ul>
-              <li>about</li>
-              <li>collection</li>
+              <li className="relative pg-link">
+                <div className="w-12 h-full absolute top-0 left-0 -translate-x-1 flex justify-center items-center px-2">
+                  <img
+                    src="/images/navbar/left.png"
+                    alt="tree"
+                    className="w-full -rotate-25"
+                  />
+                  <img
+                    src="/images/navbar/right.png"
+                    alt="tree"
+                    className="w-full rotate-25"
+                  />
+                </div>
+                about
+              </li>
+              <li className="relative pg-link">
+                <div className="w-11 h-full absolute top-0 left-0 -translate-x-3 flex justify-between items-center">
+                  <img
+                    src="/images/navbar/left.png"
+                    alt="tree"
+                    className="w-full -rotate-25"
+                  />
+                  <img
+                    src="/images/navbar/right.png"
+                    alt="tree"
+                    className="w-full rotate-25"
+                  />
+                </div>
+                collection
+              </li>
             </ul>
           </div>
         </div>
         <div className="flex-right lg:gap-15">
           <ul className="hidden lg:flex">
-            <li>utility</li>
-            <li className="uppercase">faq</li>
+            <li className="relative pg-link">
+              <div className="w-12 h-full absolute top-0 left-0 -translate-x-6 flex justify-between items-center px-2">
+                <img
+                  src="/images/navbar/left.png"
+                  alt="tree"
+                  className="w-full -rotate-25"
+                />
+                <img
+                  src="/images/navbar/right.png"
+                  alt="tree"
+                  className="w-full rotate-25"
+                />
+              </div>
+              utility
+            </li>
+            <li className="uppercase relative pg-link">
+              <div className="w-13 h-full absolute top-0 left-0 -translate-x-7 flex justify-between items-center px-3">
+                <img
+                  src="/images/navbar/left.png"
+                  alt="tree"
+                  className="w-full -rotate-25"
+                />
+                <img
+                  src="/images/navbar/right.png"
+                  alt="tree"
+                  className="w-full rotate-25"
+                />
+              </div>
+              faq
+            </li>
           </ul>
           <div className="hidden lg:flex lg:flex-center gap-3">
             {socialInfo.map((iconInfo, _) => {
@@ -55,10 +202,10 @@ const Navbar = () => {
               return (
                 <a
                   key={_}
-                  className="w-9 h-9 rounded-full bg-red flex-center cursor-pointer"
+                  className="w-9 h-9 rounded-full bg-red flex-center border-1 border-red cursor-pointer group hover:bg-soft-white transition-all duration-550"
                   href={iconInfo.url}
                 >
-                  <Ico className="text-white text-[1.25rem]" />
+                  <Ico className="text-white text-[1.25rem] group-hover:text-red" />
                 </a>
               );
             })}

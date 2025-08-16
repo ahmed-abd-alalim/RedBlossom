@@ -1,5 +1,7 @@
 import gsap from "gsap";
-import { ScrollTrigger, SplitText } from "gsap/all";
+import { ScrollTrigger } from "gsap/all";
+import ScrollSmoother from "gsap/ScrollSmoother";
+import { useEffect } from "react";
 
 // import layouts
 import { Navbar, Footer, Looding } from "@layouts";
@@ -14,28 +16,42 @@ import {
   SVideo,
   HowToGetIt,
   FAQ,
-  TVideo,
 } from "@sections";
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+// import utils
+import { STP } from "@utils";
+
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 function App() {
+  useEffect(() => {
+    // Create the smoother
+    ScrollSmoother.create({
+      wrapper: "#smooth-wrapper",
+      content: "#smooth-content",
+      smooth: 1.5,
+      effects: true,
+    });
+  }, []);
+
   return (
-    <div className="app-container">
+    <div id="smooth-wrapper" className="app-container">
+      <STP />
       <Looding />
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <FVideo />
-        <Collection />
-        <Utility />
-        <SVideo />
-        <HowToGetIt />
-        <FAQ />
-        <TVideo />
-      </main>
-      <Footer />
+      <div id="smooth-content">
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <FVideo />
+          <Collection />
+          <Utility />
+          <SVideo />
+          <HowToGetIt />
+          <FAQ />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }

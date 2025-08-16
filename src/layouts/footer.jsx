@@ -1,3 +1,6 @@
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
 // import config
 import config from "@/assets/config.json";
 
@@ -10,6 +13,11 @@ const Footer = () => {
     { icon: RiInstagramFill, url: "#" },
     { icon: RiTwitterXFill, url: "#" },
   ];
+
+  useGSAP(() => {
+    gsap.set("footer", { marginTop: "100vh" });
+  });
+
   return (
     <footer>
       <div className="w-50 md:w-65 absolute top-0 right-0 rotate-15 translate-x-10 -translate-y-12">
@@ -69,18 +77,32 @@ const Footer = () => {
           <div className="text-center lg:text-start">
             <h4>menu</h4>
             <ul>
-              <li>about</li>
-              <li>collection</li>
-              <li>utility</li>
-              <li className="uppercase">faq</li>
+              <li className="hover:text-dark-red focus:text-dark-red hover:opacity-80 focus:opacity-80 transition-all duration-500">
+                about
+              </li>
+              <li className="hover:text-dark-red  focus:text-dark-red hover:opacity-80  focus:opacity-80 transition-all duration-500">
+                collection
+              </li>
+              <li className="hover:text-dark-red focus:text-dark-red hover:opacity-80 focus:opacity-80 transition-all duration-500">
+                utility
+              </li>
+              <li className="uppercase hover:text-dark-red focus:text-dark-red hover:opacity-80 focus:opacity-80 transition-all duration-500">
+                faq
+              </li>
             </ul>
           </div>
           <div className="hidden lg:block">
             <h4>messengers</h4>
             <ul>
-              <li>instagram</li>
-              <li>discord</li>
-              <li>twitter</li>
+              <li className="hover:text-dark-red hover:opacity-80 transition-all duration-500">
+                instagram
+              </li>
+              <li className="hover:text-dark-red hover:opacity-80 transition-all duration-500">
+                discord
+              </li>
+              <li className="hover:text-dark-red hover:opacity-80 transition-all duration-500">
+                twitter
+              </li>
             </ul>
           </div>
           <div className="flex justify-center items-center lg:hidden gap-3">
@@ -89,10 +111,10 @@ const Footer = () => {
               return (
                 <a
                   key={_}
-                  className="w-10 h-10 md:w-14  md:h-14 rounded-full bg-red flex-center cursor-pointer"
+                  className="w-10 h-10 md:w-14  md:h-14 rounded-full bg-red flex-center border-1 border-red cursor-pointer group hover:bg-soft-white focus:bg-soft-white transition-all duration-550"
                   href={iconInfo.url}
                 >
-                  <Ico className="text-white text-[1.25rem] md:text-[1.95rem]" />
+                  <Ico className="text-white text-[1.25rem] md:text-[1.95rem] group-hover:text-red group-focus:text-red" />
                 </a>
               );
             })}

@@ -1,12 +1,54 @@
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+
 const Fvideo = () => {
+  const videoRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.set(".first-vd-wrapper", { opacity: 0 });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".first-vd-wrapper",
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+        pin: true,
+        // markers: true,
+      },
+    });
+
+    tl.to(".about-section", { opacity: 0, ease: "power1.inOut" }).to(
+      ".first-vd-wrapper",
+      {
+        opacity: 1,
+        duration: 20,
+        ease: "power1.inOut",
+      }
+    );
+
+    videoRef.current.onloadedmetadata = () => {
+      tl.to(
+        videoRef.current,
+        {
+          currentTime: videoRef.current.duration,
+          duration: 50,
+          ease: "power1.inOut",
+        },
+        "<"
+      );
+    };
+  }, []);
   return (
-    <section className="relative w-full h-[100vh]">
+    <section className="first-vd-wrapper relative w-full h-[100vh]">
       <video
+        ref={videoRef}
         src="/videos/f-video.mp4"
         className="w-screen h-screen object-cover"
-        autoPlay
-        // muted
-        // loop
+        muted
+        playsInline
+        preload="auto"
       ></video>
     </section>
   );

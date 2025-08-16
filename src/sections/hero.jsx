@@ -8,48 +8,86 @@ import { HiMiniArrowUpRight } from "@/assets/icons";
 import { CycleButton, Button } from "@/components";
 
 const Hero = () => {
-  // useGSAP(() => {
+  useGSAP(() => {
+    gsap.set(".hero-cycle", { scale: 1, opacity: 0.2 });
 
-  //   gsap.set(".mask-logo", {
-  //     marginTop: "-100vh",
-  //     opacity: 0,
-  //   });
+    window.addEventListener("load", () => {
+      gsap.fromTo(
+        ".hero-cycle",
+        {
+          scale: 0.8,
+          opacity: 1,
+        },
+        {
+          scale: 1,
+          duration: 1,
+          ease: "back.out",
+        }
+      );
+    });
 
-  //   gsap.set(".entrance-message", { marginTop: "0vh" });
+    gsap.set([".right-part", ".left-part", ".hero-avatar", ".hero-tree"], {
+      opacity: 0,
+    });
 
-  //   window.addEventListener("load", () => {
-  //     gsap.fromTo(
-  //       ".scale-out",
-  //       {
-  //         scale: 1.35,
-  //       },
-  //       {
-  //         scale: 1.25,
-  //         ease: "power1.inOut",
-  //         duration: 1,
-  //       }
-  //     );
-  //   });
+    gsap.to(".hero-tree", {
+      scrollTrigger: {
+        trigger: ".hero-tree",
+        toggleActions: "restart",
+      },
+      opacity: 1,
+      duration: 2,
+      ease: "power1.inOut",
+      maskImage:
+        "radial-gradient(circle at 50% 100vh, black 94%, transparent 100%)",
+    });
 
-  //   const tl = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: ".hero-section",
-  //       start: "top top",
-  //       scrub: 2.5,
-  //       end: "+=200%",
-  //       pin: true,
-  //     },
-  //   });
+    gsap.to(".hero-avatar", {
+      delay: 1,
+      opacity: 1,
+      duration: 1,
+      ease: "power1.inOut",
+    });
 
-  //   tl.to(".fade-out", { opacity: 0, ease: "power1.inOut" })
-  //     .to(".scale-out", { scale: 1, ease: "power1.inOut" })
-  //     .to(".mask-wrapper", { maskSize, ease: "power1.inOut" }, "<")
-  //     .to(".mask-wrapper", { opacity: 0 });
-  // });
+    gsap.to(".right-part", {
+      delay: 2,
+      opacity: 1,
+      duration: 1,
+      ease: "power1.inOut",
+    });
+
+    gsap.to(".left-part", {
+      delay: 2,
+      opacity: 1,
+      duration: 1,
+      ease: "power1.inOut",
+    });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".hero-section",
+        start: "top top",
+        end: "+=60%",
+        scrub: 2.5,
+        pin: true,
+        // markers: true,
+      },
+    });
+
+    tl.to(".hero-cycle", {
+      scale: 0.9,
+      duration: 1,
+      ease: "power1.inOut",
+    }).to(".hero-cycle", {
+      y: "50vh",
+      duration: 2,
+      ease: "power1.inOut",
+    });
+  });
 
   return (
     <section className="hero-section relative xl:bg-[url(/images/bgs/1.webp)] bg-[position:center_top] md:bg-[length:100%] bg-no-repeat grid grid-cols-1 xl:grid-cols-[18%_64%_23%]">
-      <div className="hidden xl:flex flex-col gap-15 justify-center items-center relative z-3">
+      <div className="right-part hidden xl:flex flex-col gap-15 justify-center items-center relative z-3">
         <div>
           <h1 className="text-[3rem]/12 text-black font-juzhokaizen scale-135 translate-x-[4.2rem] 2xl:scale-140 2xl:translate-x-[6rem]">
             <span className="block translate-x-8">Red</span>
@@ -71,7 +109,7 @@ const Hero = () => {
         <div className="gradient-layer top-0 xl:hidden bg-linear-to-b" />
         <div className="gradient-layer bottom-0 translate-y-1 bg-linear-to-t" />
 
-        <div className="h-[27rem] md:h-[50rem] lg:h-[60rem] xl:h-[100vh] overflow-hidden">
+        <div className="hero-avatar relative z-2 h-[27rem] md:h-[50rem] lg:h-[60rem] xl:h-[100vh] overflow-hidden">
           <video
             className="h-full relative z-2 scale-130 pr-[.1rem] md:scale-115 md:pr-[1.2rem] lg:scale-100 lg:pr-[1rem] xl:scale-110"
             autoPlay
@@ -82,12 +120,12 @@ const Hero = () => {
         </div>
 
         <div
-          className="absolute z-1 abs-center w-[clamp(22rem,_71.43vw,_42rem)] h-[clamp(22rem,_71.43vw,_42rem)] rounded-full bg-[url('/images/more/dragon.png'),radial-gradient(at_50%_50%,var(--color-light-red),var(--color-dark-red))]
+          className="hero-cycle absolute z-1 abs-center w-[clamp(22rem,_71.43vw,_42rem)] h-[clamp(22rem,_71.43vw,_42rem)] rounded-full bg-[url('/images/more/dragon.png'),radial-gradient(at_50%_50%,var(--color-light-red),var(--color-dark-red))]
             bg-center bg-no-repeat [background-size:100%]"
         />
       </div>
 
-      <div className="hidden relative z-4 xl:flex flex-col justify-center items-center gap-12 pt-20 ">
+      <div className="left-part hidden relative z-4 xl:flex flex-col justify-center items-center gap-12 pt-20 ">
         <div className="w-full flex-between -translate-x-25 2xl:-translate-x-45">
           <h6 className="w-[50%] capitalize font-medium text-black text-[.7rem]/4">
             <span className="opacity-30">Red Blossom Spirits is a</span>
@@ -139,14 +177,16 @@ const Hero = () => {
             A transformed creation, giving life to a red mystical entity shaped
             by universal spirit archetypes and ancient.
           </h4>
-          <div className="flex-left cursor-pointer opacity-70">
-            <span className="text-[.9rem] underline">Read More</span>
-            <HiMiniArrowUpRight />
+          <div className="w-26 flex-left cursor-pointer opacity-70 group">
+            <span className="text-blacktext-[.9rem] underline group-hover:text-red transition-all duration-550">
+              Read More
+            </span>
+            <HiMiniArrowUpRight className="text-black group-hover:text-red transition-all duration-550" />
           </div>
         </div>
       </div>
 
-      <div className="relative z-5 flex flex-col justify-center items-center gap-3 xl:hidden -translate-y-10 md:-translate-y-25">
+      <div className="right-part relative z-5 flex flex-col justify-center items-center gap-3 xl:hidden -translate-y-10 md:-translate-y-25">
         <h1 className="w-[45%] md:w-[30%]  lg:w-[50%] text-black text-[2.5rem]/11 md:text-[3rem]/13 lg:text-[5rem]/20 font-juzhokaizen text-center">
           Red Blossom Spirits
         </h1>
@@ -161,7 +201,7 @@ const Hero = () => {
         <div>
           <img src="/images/Trees/tree-1.png" alt="tree" width={"100%"} />
         </div>
-        <div className="w-full abs-center">
+        <div className="hero-tree w-full abs-center">
           <img src="/images/Trees/tree-1-1.png" alt="tree" width={"100%"} />
         </div>
       </div>
@@ -169,7 +209,7 @@ const Hero = () => {
         <div>
           <img src="/images/Trees/tree-1-2.png" alt="tree" width={"100%"} />
         </div>
-        <div className="w-full abs-center">
+        <div className="hero-tree  w-full abs-center">
           <img src="/images/Trees/tree-1-2-1.png" alt="tree" width={"100%"} />
         </div>
       </div>
