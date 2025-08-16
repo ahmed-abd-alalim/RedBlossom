@@ -41,12 +41,12 @@
   }
 
   .app-container {
-    @apply min-h-screen flex flex-col justify-between overflow-hidden gap-30;
+    @apply min-h-screen flex flex-col justify-between  gap-30 overflow-hidden;
   }
 
-  /* ::-webkit-scrollbar {
+  ::-webkit-scrollbar {
     @apply w-0;
-  } */
+  }
 }
 
 @layer utilities {
