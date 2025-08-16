@@ -72,7 +72,7 @@ const Utility = () => {
         let { isSmall, isMedium, isLarge } = context.conditions;
 
         if (isSmall) {
-          gsap.set(".utility-section", { marginTop: "50vh" });
+          gsap.set(".utility-section", { marginTop: "100vh" });
         }
         if (isMedium) {
           gsap.set(".utility-section", { marginTop: "40vh" });
@@ -123,11 +123,12 @@ const Utility = () => {
       })
       .to(".utility-avatar-title", {
         opacity: 1,
-        duration: 1,
+        duration: 5,
         ease: "power1.inOut",
         maskImage:
           "radial-gradient(circle at 50% 0vh, black 50%, transparent 100%)",
       });
+
     const utilityCard = document.querySelectorAll(".utility-card");
     utilityCard.forEach((item, i) => {
       tl.to(item, {
