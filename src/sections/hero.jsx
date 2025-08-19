@@ -9,22 +9,22 @@ import { CycleButton, Button } from "@/components";
 import { useEffect } from "react";
 
 const Hero = ({ isLoad, setIsLoad }) => {
-  const isLoaded = !isLoad;
   useEffect(() => {
-    gsap.fromTo(
-      ".hero-cycle",
-      {
-        scale: 0.8,
-        opacity: 1,
-      },
-      {
-        scale: 1,
-        duration: 2,
-        delay: 2,
-        ease: "back.out",
-      }
-    );
-  }, [isLoaded]);
+    if (!isLoad) {
+      gsap.fromTo(
+        ".hero-cycle",
+        {
+          scale: 0.8,
+          opacity: 1,
+        },
+        {
+          scale: 1,
+          duration: 2,
+          ease: "back.out",
+        }
+      );
+    }
+  }, [isLoad]);
 
   useGSAP(() => {
     gsap.set(".hero-cycle", { scale: 1, opacity: 0.2 });
