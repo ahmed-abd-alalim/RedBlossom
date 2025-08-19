@@ -44,11 +44,11 @@ function App() {
 
   return (
     <div id="smooth-wrapper">
+      <STP />
+      <RR />
+      <Looding />
       <div id="smooth-content">
         <div className="app-container">
-          <STP />
-          <RR />
-          <Looding />
           <Navbar />
           <main>
             <Hero />

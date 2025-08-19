@@ -35,7 +35,7 @@ const HowToGetIt = () => {
         trigger: ".HowToGetIt-section",
         start: "top top",
         end: "bottom +=30%",
-        scrub: 2.5,
+        scrub: true,
         pin: true,
         // markers: true,
       },
