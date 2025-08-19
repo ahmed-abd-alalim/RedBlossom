@@ -91,7 +91,7 @@
   footer {
     @apply relative bg-[url(/images/bgs/6.webp)] bg-[length:200%] bg-[position:center_top] md:bg-[length:150%] bg-no-repeat;
     h1 {
-      @apply font-juzhokaizen text-white text-[2.5rem]/12 px-15 md:px-5 lg:text-[5.8rem]/28 md:text-[3.8rem]/25 2xl:text-[7.8rem]/28 text-center;
+      @apply font-juzhokaizen text-white text-[2.5rem]/12 px-15 md:px-5 lg:text-[5.8rem]/26 md:text-[3.8rem]/21 2xl:text-[7.8rem]/20 text-center;
     }
     h2 {
       @apply text-[.8rem] text-black;
