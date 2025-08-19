@@ -183,7 +183,7 @@ const Utility = () => {
             autoPlay
             muted
           >
-            <source src="https://cdn.jsdelivr.net/gh/ahmed-abd-alalim/red-blossom@main/public/videos/utility.webm" />
+            <source src="https://cdn.jsdelivr.net/gh/ahmed-abd-alalim/red-blossom@main/videos/utility.webm" />
           </video>
         </div>
         <h2 className="utility-avatar-title hidden xl:block absolute top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2 z-6 text-white text-[2.5rem] font-juzhokaizen text-center text-shadow-lg">

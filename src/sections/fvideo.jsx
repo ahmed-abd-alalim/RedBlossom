@@ -48,7 +48,7 @@ const Fvideo = () => {
     <section className="first-vd-wrapper relative w-full h-[100vh]">
       <video
         ref={videoRef}
-        src="https://cdn.jsdelivr.net/gh/ahmed-abd-alalim/red-blossom@main/public/videos/f-video.mp4"
+        src="https://cdn.jsdelivr.net/gh/ahmed-abd-alalim/red-blossom@main/videos/f-video.mp4"
         className="w-screen h-screen object-cover"
         muted
         playsInline
