@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import ScrollSmoother from "gsap/ScrollSmoother";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import { Element } from "react-scroll";
 
 // import layouts
@@ -20,7 +20,7 @@ import {
 } from "@sections";
 
 // import utils
-import { STP } from "@utils";
+import { STP, RR } from "@utils";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -31,41 +31,45 @@ function App() {
     "https://ahmedabdalalim.pages.dev \n\n "
   );
 
-  useEffect(() => {
-    // Create the smoother
-    ScrollSmoother.create({
+  useLayoutEffect(() => {
+    const smoother = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
       smooth: 1.5,
       effects: true,
     });
+
+    return () => smoother.kill();
   }, []);
 
   return (
-    <div id="smooth-wrapper" className="app-container">
-      <STP />
-      <Looding />
+    <div id="smooth-wrapper">
       <div id="smooth-content">
-        <Navbar />
-        <main>
-          <Hero />
-          <Element name="about">
-            <About />
-          </Element>
-          <FVideo />
-          <Element name="collection">
-            <Collection />
-          </Element>
-          <Element name="utility">
-            <Utility />
-          </Element>
-          <SVideo />
-          <HowToGetIt />
-          <Element name="faq">
-            <FAQ />
-          </Element>
-        </main>
-        <Footer />
+        <div className="app-container">
+          <STP />
+          <RR />
+          <Looding />
+          <Navbar />
+          <main>
+            <Hero />
+            <Element name="about">
+              <About />
+            </Element>
+            <FVideo />
+            <Element name="collection">
+              <Collection />
+            </Element>
+            <Element name="utility">
+              <Utility />
+            </Element>
+            <SVideo />
+            <HowToGetIt />
+            <Element name="faq">
+              <FAQ />
+            </Element>
+          </main>
+          <Footer />
+        </div>
       </div>
     </div>
   );

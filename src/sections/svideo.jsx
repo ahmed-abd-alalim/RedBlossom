@@ -6,14 +6,14 @@ const Svideo = () => {
   const videoRef = useRef(null);
 
   useGSAP(() => {
-    gsap.set(".secound-vd-wrapper", { opacity: 0, marginTop: "20vh" });
+    gsap.set(".secound-vd-wrapper", { opacity: 0, marginTop: "-115vh" });
 
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".secound-vd-wrapper",
         start: "top top",
         end: "bottom top",
-        scrub: true,
+        scrub: 0.4,
         pin: true,
         // markers: true,
       },
@@ -22,19 +22,22 @@ const Svideo = () => {
     tl.to(".utility-section", {
       opacity: 0,
       ease: "power1.inOut",
-      delay: 5,
-    }).to(".secound-vd-wrapper", {
-      opacity: 1,
-      duration: 30,
-      ease: "power1.inOut",
-    });
+    }).to(
+      ".secound-vd-wrapper",
+      {
+        opacity: 1,
+        duration: 2,
+        ease: "power1.inOut",
+      },
+      "<"
+    );
 
     videoRef.current.onloadedmetadata = () => {
       tl.to(
         videoRef.current,
         {
           currentTime: videoRef.current.duration,
-          duration: 100,
+          duration: 10,
           ease: "power1.inOut",
         },
         "<"

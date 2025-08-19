@@ -16,7 +16,7 @@ const HowToGetIt = () => {
       y: -15,
     });
 
-    gsap.set(".HowToGetIt-section", { marginTop: "30vh" });
+    gsap.set(".HowToGetIt-section", { marginTop: "60vh" });
 
     gsap.to(".HowToGetIt-tree", {
       scrollTrigger: {
@@ -40,55 +40,48 @@ const HowToGetIt = () => {
         // markers: true,
       },
     });
-    tl.to(".secound-vd-wrapper", {
-      opacity: 0,
-    })
-      .to(
-        ".HowToGetIt-button",
-        {
-          opacity: 1,
-          duration: 10,
-          ease: "power1.inOut",
-        },
-        "<"
-      )
-      .to(
-        ".HowToGetIt-title",
-        {
-          opacity: 1,
-          duration: 10,
-          ease: "power1.inOut",
-        },
-        "<"
-      );
-
-    const HowToGetItContant = document.querySelectorAll(".HowToGetIt-contant");
-    const HowToGetItSmallContant = document.querySelectorAll(
-      ".HowToGetIt-small-contant"
-    );
-
-    HowToGetItContant.forEach((item, i) => {
-      tl.to(item, {
-        delay: 3 * i,
-        y: 0,
+    tl.to(
+      ".HowToGetIt-button",
+      {
         opacity: 1,
         duration: 10,
         ease: "power1.inOut",
-      });
-    });
+      },
+      "<"
+    ).to(
+      ".HowToGetIt-title",
+      {
+        opacity: 1,
+        duration: 10,
+        ease: "power1.inOut",
+      },
+      "<"
+    );
 
-    HowToGetItSmallContant.forEach((item, i) => {
-      tl.to(
-        item,
-        {
-          delay: 3 * i,
+    // Animate small cards (only if visible)
+    document.querySelectorAll(".HowToGetIt-contant").forEach((item) => {
+      if (item.offsetParent !== null) {
+        // visible check
+        tl.to(item, {
           y: 0,
           opacity: 1,
-          duration: 10,
+          duration: 20,
           ease: "power1.inOut",
-        },
-        "<"
-      );
+        });
+      }
+    });
+
+    // Animate big cards (only if visible)
+    document.querySelectorAll(".HowToGetIt-small-contant").forEach((item) => {
+      if (item.offsetParent !== null) {
+        // visible check
+        tl.to(item, {
+          y: 0,
+          opacity: 1,
+          duration: 15,
+          ease: "power1.inOut",
+        });
+      }
     });
   });
 

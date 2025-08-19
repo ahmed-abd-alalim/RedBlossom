@@ -6,11 +6,9 @@ import { HiMiniArrowUpRight } from "@/assets/icons";
 
 const About = () => {
   useGSAP(() => {
-    gsap.set(".about-tree", {
+    gsap.set([".about-tree", ".about-contant"], {
       opacity: 0,
     });
-
-    gsap.set(".about-contant", { opacity: 0 });
 
     gsap.to(".about-tree", {
       scrollTrigger: {
@@ -29,16 +27,16 @@ const About = () => {
         trigger: ".about-section",
         start: "top top",
         end: "bottom top",
-        scrub: 2.5,
+        scrub: true,
         pin: true,
         // markers: true,
       },
     });
-    tl.to(".hero-section", { opacity: 0 }).to(
+    tl.to(
       ".about-contant",
       {
         opacity: 1,
-        duration: 5,
+        duration: 4,
         scale: 1.05,
         ease: "power1.inOut",
         maskImage:

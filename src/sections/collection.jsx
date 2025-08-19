@@ -82,7 +82,7 @@ const Collection = () => {
       { opacity: 0 }
     );
 
-    gsap.set(".collection-section", { marginTop: "25vh" });
+    gsap.set(".collection-section", { marginTop: "60vh" });
 
     gsap.to(".collection-tree", {
       scrollTrigger: {
@@ -106,12 +106,13 @@ const Collection = () => {
         // markers: true,
       },
     });
+
     tl.to(
       ".collection-contant",
       {
         delay: 0.5,
         opacity: 1,
-        duration: 10,
+        duration: 15,
         ease: "power1.inOut",
         maskImage:
           "radial-gradient(circle at 50% 0vh, black 65%, transparent 100%)",

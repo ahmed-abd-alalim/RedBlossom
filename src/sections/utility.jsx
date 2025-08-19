@@ -46,7 +46,8 @@ const Utility = () => {
     gsap.set(
       [
         ".utility-tree",
-        ".utility-card",
+
+        ".utility-sm-card",
         ".utility-avatar",
         ".utility-avatar-title",
       ],
@@ -54,9 +55,15 @@ const Utility = () => {
         opacity: 0,
       }
     );
+
+    gsap.set(".utility-card", {
+      opacity: 0,
+      y: -15,
+    });
+
     gsap.set(".utiluty-cycle", {
       scale: 0.9,
-      y: "-100vh",
+      opacity: 0,
     });
 
     const mm = gsap.matchMedia();
@@ -72,13 +79,13 @@ const Utility = () => {
         let { isSmall, isMedium, isLarge } = context.conditions;
 
         if (isSmall) {
-          gsap.set(".utility-section", { marginTop: "100vh" });
+          gsap.set(".utility-section", { marginTop: "0vh" });
         }
         if (isMedium) {
-          gsap.set(".utility-section", { marginTop: "40vh" });
+          gsap.set(".utility-section", { marginTop: "-20vh" });
         }
         if (isLarge) {
-          gsap.set(".utility-section", { marginTop: "40vh" });
+          gsap.set(".utility-section", { marginTop: "-20vh" });
         }
       }
     );
@@ -100,45 +107,60 @@ const Utility = () => {
         trigger: ".utility-section",
         start: "top top",
         end: "bottom",
-        scrub: 2.5,
+        scrub: true,
         pin: true,
         // markers: true,
       },
     });
 
-    tl.to(".utiluty-cycle", {
-      y: "0vh",
-      duration: 10,
-      ease: "power1.inOut",
-    })
-      .to(".utiluty-cycle", {
+    tl.to(
+      ".utiluty-cycle",
+      {
+        opacity: 1,
         scale: 1,
-        duration: 10,
+        duration: 120,
         ease: "power1.inOut",
-      })
+      },
+      "<"
+    )
       .to(".utility-avatar", {
         opacity: 1,
-        duration: 5,
+        duration: 70,
         ease: "power1.inOut",
       })
       .to(".utility-avatar-title", {
         opacity: 1,
-        duration: 5,
+        duration: 50,
         ease: "power1.inOut",
         maskImage:
           "radial-gradient(circle at 50% 0vh, black 50%, transparent 100%)",
       });
 
-    const utilityCard = document.querySelectorAll(".utility-card");
-    utilityCard.forEach((item, i) => {
-      tl.to(item, {
-        delay: 2 * i,
-        opacity: 1,
-        duration: 10,
-        ease: "power1.inOut",
-        maskImage:
-          "radial-gradient(circle at 50% 0vh, black 65%, transparent 100%)",
-      });
+    // Animate small cards (only if visible)
+    document.querySelectorAll(".utility-card").forEach((item) => {
+      if (item.offsetParent !== null) {
+        // visible check
+        tl.to(item, {
+          y: 0,
+          opacity: 1,
+          duration: 40,
+          ease: "power1.inOut",
+        });
+      }
+    });
+
+    // Animate big cards (only if visible)
+    document.querySelectorAll(".utility-sm-card").forEach((item) => {
+      if (item.offsetParent !== null) {
+        // visible check
+        tl.to(item, {
+          opacity: 1,
+          duration: 30,
+          ease: "power1.inOut",
+          maskImage:
+            "radial-gradient(circle at 50% 0vh, black 50%, transparent 100%)",
+        });
+      }
     });
   });
 
@@ -190,15 +212,15 @@ const Utility = () => {
         </p>
       </div>
 
-      <div className="utility-card hidden xl:flex justify-between items-center w-full h-full absolute z-8 top-0 left-0">
+      <div className="hidden xl:flex justify-between items-center w-full h-full absolute z-8 top-0 left-0">
         <div className="translate-x-60 2xl:translate-x-90 translate-y-20 xl:translate-y-5">
-          <div className="w-38 h-45 bg-white rounded-3xl shadow-[5px_3px_10px_1px] shadow-soft-black col-center gap-1 p-5 text-center -translate-x-25 translate-y-6">
+          <div className="utility-card  w-38 h-45 bg-white rounded-3xl shadow-[5px_3px_10px_1px] shadow-soft-black col-center gap-1 p-5 text-center -translate-x-25 translate-y-6">
             <p className="text-black text-[.9rem]  font-medium">
               Priority access to future drops
             </p>
             <img src="/images/logo.png" alt="logo" className="w-8" />
           </div>
-          <div className="w-38 h-45 bg-white rounded-3xl shadow-[5px_3px_10px_1px] shadow-soft-black col-center gap-1 p-5 text-center relative z-2">
+          <div className="utility-card  w-38 h-45 bg-white rounded-3xl shadow-[5px_3px_10px_1px] shadow-soft-black col-center gap-1 p-5 text-center relative z-2">
             <p className="text-black text-[.9rem] font-medium">
               Rights to use the image commercially
             </p>
@@ -206,13 +228,13 @@ const Utility = () => {
           </div>
         </div>
         <div className="-translate-x-65 2xl:-translate-x-98 -translate-y-20">
-          <div className="w-38 h-45 bg-white rounded-3xl shadow-[5px_3px_10px_1px] shadow-soft-black col-center gap-1 p-5 text-center relative z-3">
+          <div className="utility-card  w-38 h-45 bg-white rounded-3xl shadow-[5px_3px_10px_1px] shadow-soft-black col-center gap-1 p-5 text-center relative z-3">
             <p className="text-black text-[.9rem]  font-medium">
               Exclusive high-quality digital art
             </p>
             <img src="/images/logo.png" alt="logo" className="w-8" />
           </div>
-          <div className="w-38 h-45 bg-white rounded-3xl shadow-[5px_3px_10px_1px] shadow-soft-black col-center gap-1 p-5 text-center translate-x-28 -translate-y-6">
+          <div className="utility-card  w-38 h-45 bg-white rounded-3xl shadow-[5px_3px_10px_1px] shadow-soft-black col-center gap-1 p-5 text-center translate-x-28 -translate-y-6">
             <p className="text-black text-[.9rem]  font-medium">
               Invitation to a closed circle of collectors
             </p>
@@ -221,7 +243,7 @@ const Utility = () => {
         </div>
       </div>
 
-      <div className="utility-card relative z-6 xl:hidden -translate-y-20">
+      <div className="utility-sm-card relative z-6 xl:hidden -translate-y-20">
         <div
           className="relative z-4 w-full h-full flex  keen-slider"
           ref={sliderRef}

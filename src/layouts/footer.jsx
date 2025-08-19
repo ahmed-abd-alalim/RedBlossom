@@ -16,7 +16,31 @@ const Footer = () => {
   ];
 
   useGSAP(() => {
-    gsap.set("footer", { marginTop: "100vh" });
+    gsap.set("footer", { marginTop: "20vh" });
+    gsap.set(".footer-tree", { opacity: 0 });
+    gsap.set(".footer-cycle", { scale: 0.9 });
+
+    gsap.to(".footer-tree", {
+      scrollTrigger: {
+        trigger: ".footer-tree",
+        toggleActions: "restart",
+      },
+      opacity: 1,
+      duration: 2,
+      ease: "power1.inOut",
+      maskImage:
+        "radial-gradient(circle at 50% 100vh, black 94%, transparent 100%)",
+    });
+
+    gsap.to(".footer-cycle", {
+      scrollTrigger: {
+        trigger: ".footer-cycle",
+        toggleActions: "restart",
+      },
+      scale: 1,
+      duration: 2,
+      ease: "power1.inOut",
+    });
   });
 
   return (
@@ -26,7 +50,7 @@ const Footer = () => {
         <img
           src="/images/Trees/tree-7-1.png"
           alt="tree"
-          className="w-full absolute top-0"
+          className="w-full absolute top-0 footer-tree"
         />
       </div>
 
@@ -35,7 +59,7 @@ const Footer = () => {
         <img
           src="/images/Trees/tree-7-2-1.png"
           alt="tree"
-          className="w-full absolute top-0"
+          className="w-full absolute top-0 footer-tree"
         />
       </div>
 
@@ -132,14 +156,14 @@ const Footer = () => {
       </div>
 
       <div className="relative mt-38 lg:mt-2">
-        <div className="absolute -top-30 lg:-top-40 left-1/2 transform -translate-x-1/2 w-50 h-50 md:w-55 md:h-55 lg:w-68 lg:h-68 bg-red bg-[url(/images/more/dragon.png)] [background-size:160%] rounded-full overflow-hidden">
+        <div className="footer-cycle absolute -top-30 lg:-top-40 left-1/2 transform -translate-x-1/2 w-50 h-50 md:w-55 md:h-55 lg:w-68 lg:h-68 bg-red bg-[url(/images/more/dragon.png)] [background-size:160%] rounded-full overflow-hidden">
           <img
             src="/images/avatars/avatar-2.png"
             alt="Cut Out"
             className="w-full h-full object-cover scale-110"
           />
         </div>
-        <div className="footer-mask-curved bg-[url('/images/more/footer.png')] bg-red bg-center bg-repeat  [background-size:20rem] md:[background-size:30rem] xl:[background-size:25rem]  h-[20rem] md:h-[17rem] lg:h-[16rem] 2xl:h-[17rem]  flex flex-col items-center justify-end text-center py-3 lg:py-0 [--r:40px] [--s:110px] [--a:24deg] md:[--r:40px] md:[--s:120px] md:[--a:19deg] lg:[--r:45px] lg:[--s:150px] lg:[--a:21.5deg]">
+        <div className="footer-mask-curved bg-[url('/images/more/footer.png')] bg-red bg-center bg-repeat  [background-size:20rem] md:[background-size:30rem] xl:[background-size:25rem]  h-[20rem] md:h-[17rem] lg:h-[25rem] xl:h-[18rem]  flex flex-col items-center justify-end text-center py-3 lg:py-0 [--r:40px] [--s:110px] [--a:24deg] md:[--r:40px] md:[--s:120px] md:[--a:19deg] lg:[--r:45px] lg:[--s:150px] lg:[--a:21.5deg]">
           <h1>Red Blossom Spirits</h1>
 
           <div className="flex lg:hidden mt-3 flex-col md:flex-row md:gap-5 gap-1">

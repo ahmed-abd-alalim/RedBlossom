@@ -23,7 +23,9 @@ const Navbar = () => {
 
   useGSAP(() => {
     // Initially hide nav
-    gsap.set("nav", { opacity: 0 });
+    gsap.set("nav", {
+      opacity: 0,
+    });
 
     gsap.to("nav", {
       scrollTrigger: {
@@ -31,7 +33,7 @@ const Navbar = () => {
         toggleActions: "restart",
       },
       delay: 1,
-      duration: 1,
+      duration: 2,
       opacity: 1,
       ease: "power1.inOut",
       maskImage:
@@ -44,17 +46,16 @@ const Navbar = () => {
         trigger: "nav",
         start: "top top",
         end: "bottom",
-        scrub: 2,
+        scrub: true,
         // markers: true,
       },
     });
 
     // Fade nav out on scroll
     tl.to("nav", {
-      duration: 1,
+      y: "-10vh",
+      duration: 10,
       ease: "power1.inOut",
-      maskImage:
-        "radial-gradient(circle at 50% 0vh, black 30%, transparent 0%)",
     });
   });
 

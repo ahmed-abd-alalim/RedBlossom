@@ -67,8 +67,8 @@ const Hero = () => {
       scrollTrigger: {
         trigger: ".hero-section",
         start: "top top",
-        end: "+=60%",
-        scrub: 2.5,
+        end: "bottom +=90%",
+        scrub: true,
         pin: true,
         // markers: true,
       },
@@ -76,10 +76,6 @@ const Hero = () => {
 
     tl.to(".hero-cycle", {
       scale: 0.9,
-      duration: 1,
-      ease: "power1.inOut",
-    }).to(".hero-cycle", {
-      y: "50vh",
       duration: 2,
       ease: "power1.inOut",
     });

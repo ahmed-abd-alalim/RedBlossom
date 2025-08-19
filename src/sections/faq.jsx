@@ -15,6 +15,30 @@ const Faq = () => {
   });
 
   useGSAP(() => {
+    const mm = gsap.matchMedia();
+    // Define breakpoints
+    mm.add(
+      {
+        // Tailwind-like breakpoints
+        isSmall: "(max-width: 640px)", // sm
+        isMedium: "(min-width: 641px) and (max-width: 1024px)", // md
+        isLarge: "(min-width: 1025px)", // lg
+      },
+      (context) => {
+        let { isSmall, isMedium, isLarge } = context.conditions;
+
+        if (isSmall) {
+          gsap.set(".faq-section", { marginTop: "115vh" });
+        }
+        if (isMedium) {
+          gsap.set(".faq-section", { marginTop: "50vh" });
+        }
+        if (isLarge) {
+          gsap.set(".faq-section", { marginTop: "60vh" });
+        }
+      }
+    );
+
     gsap.set([".faq-tree", ".faq-title", ".faq-sm-title"], {
       opacity: 0,
     });
@@ -25,12 +49,10 @@ const Faq = () => {
       opacity: 0,
     });
 
-    gsap.to(".faq-card", {
+    gsap.set(".faq-card", {
       opacity: 0,
       y: -15,
     });
-
-    gsap.set(".faq-section", { opacity: 0 });
 
     gsap.to(".faq-tree", {
       scrollTrigger: {
@@ -48,58 +70,63 @@ const Faq = () => {
       scrollTrigger: {
         trigger: ".faq-section",
         start: "top top",
-        end: "+=60%",
-        scrub: 2.5,
+        end: "bottom",
+        scrub: true,
         pin: true,
         // markers: true,
       },
     });
 
-    tl.to(".HowToGetIt-section", {
-      opacity: 0,
-      duration: 2,
-      ease: "power1.inOut",
-    })
-      .to(".faq-section", {
+    tl.to(
+      ".faq-title",
+      {
         opacity: 1,
-        duration: 2,
-        ease: "power1.inOut",
-      })
-      .to([".faq-title", ".faq-sm-title"], {
-        opacity: 1,
-        duration: 15,
+        duration: 30,
         scale: 1.05,
         ease: "power1.inOut",
         maskImage:
           "radial-gradient(circle at 50% 0vh, black 85%, transparent 100%)",
-      });
-
-    const faqCard = document.querySelectorAll(".faq-card");
-    const faqSmCard = document.querySelectorAll(".faq-sm-card");
-
-    faqCard.forEach((item, i) => {
-      tl.to(item, {
-        delay: 2 * i,
+      },
+      "<"
+    ).to(
+      ".faq-sm-title",
+      {
         opacity: 1,
+        duration: 20,
         scale: 1.05,
-        y: 0,
-        duration: 15,
         ease: "power1.inOut",
-      });
-    });
-    faqSmCard.forEach((item, i) => {
-      tl.to(
-        item,
-        {
-          delay: 2 * i,
+        maskImage:
+          "radial-gradient(circle at 50% 0vh, black 70%, transparent 100%)",
+      },
+      "<"
+    );
+
+    // Animate small cards (only if visible)
+    document.querySelectorAll(".faq-sm-card").forEach((item) => {
+      if (item.offsetParent !== null) {
+        // visible check
+        tl.to(item, {
           rotate: 0,
           x: 0,
           opacity: 1,
           duration: 15,
           ease: "power1.inOut",
-        },
-        "<"
-      );
+        });
+      }
+    });
+
+    // Animate big cards (only if visible)
+    document.querySelectorAll(".faq-card").forEach((item) => {
+      if (item.offsetParent !== null) {
+        // visible check
+        tl.to(item, {
+          opacity: 1,
+          scale: 1.05,
+          y: 0,
+          duration: 20,
+          ease: "power1.inOut",
+        });
+      }
     });
   });
 

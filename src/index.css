@@ -41,11 +41,7 @@
   }
 
   .app-container {
-    @apply min-h-screen flex flex-col justify-between  gap-30;
-  }
-
-  ::-webkit-scrollbar {
-    @apply w-0;
+    @apply min-h-screen flex flex-col justify-between;
   }
 }
 
