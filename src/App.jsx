@@ -47,8 +47,8 @@ function App() {
 
   return (
     <>
-      {/* <STP />
-      <RR /> */}
+      <STP />
+      {/* <RR /> */}
       <Looding isLoad={isLoad} />
       <div id="smooth-wrapper">
         <div id="smooth-content">
