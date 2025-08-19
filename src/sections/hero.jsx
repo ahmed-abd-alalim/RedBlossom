@@ -7,7 +7,7 @@ import { HiMiniArrowUpRight } from "@/assets/icons";
 // import components
 import { CycleButton, Button } from "@/components";
 
-const Hero = () => {
+const Hero = ({ setIsLoad }) => {
   useGSAP(() => {
     gsap.set(".hero-cycle", { scale: 1, opacity: 0.2 });
 
@@ -110,6 +110,7 @@ const Hero = () => {
             className="h-full relative z-2 scale-130 pr-[.1rem] md:scale-115 md:pr-[1.2rem] lg:scale-100 lg:pr-[1rem] xl:scale-110"
             autoPlay
             muted
+            onCanPlayThrough={() => setIsLoad(false)}
           >
             <source src="https://cdn.jsdelivr.net/gh/ahmed-abd-alalim/red-blossom@main/videos/Hero.webm" />
           </video>

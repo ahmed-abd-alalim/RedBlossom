@@ -1,18 +1,9 @@
-import { useEffect, useState } from "react";
 import Lottie from "lottie-react";
 
 // import animation
 import Chinese_woman from "@assets/animation/Chinese_woman.json";
 
-const Looding = () => {
-  const [isLoad, setIsLoad] = useState(true);
-
-  useEffect(() => {
-    window.onload = () => {
-      setIsLoad(false);
-    };
-  }, []);
-
+const Looding = ({ isLoad }) => {
   return (
     <>
       {isLoad && (

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import ScrollSmoother from "gsap/ScrollSmoother";
@@ -25,6 +26,8 @@ import { STP, RR } from "@utils";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 function App() {
+  const [isLoad, setIsLoad] = useState(true);
+
   console.log(
     "\n %c ✦ Enjoy watching ✦ ",
     "background: #f7a617; color: #fffaf5; padding: 5px 0; margin-right: 5px;",
@@ -46,13 +49,13 @@ function App() {
     <>
       <STP />
       <RR />
-      <Looding />
+      <Looding isLoad={isLoad} />
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <div className="app-container">
             <Navbar />
             <main>
-              <Hero />
+              <Hero setIsLoad={setIsLoad} />
               <Element name="about">
                 <About />
               </Element>
