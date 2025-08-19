@@ -6,25 +6,26 @@ import { HiMiniArrowUpRight } from "@/assets/icons";
 
 // import components
 import { CycleButton, Button } from "@/components";
+import { useEffect } from "react";
 
 const Hero = ({ isLoad, setIsLoad }) => {
+  useEffect(() => {
+    gsap.fromTo(
+      ".hero-cycle",
+      {
+        scale: 0.8,
+        opacity: 1,
+      },
+      {
+        scale: 1,
+        duration: 1,
+        ease: "back.out",
+      }
+    );
+  }, [isLoad]);
+
   useGSAP(() => {
     gsap.set(".hero-cycle", { scale: 1, opacity: 0.2 });
-
-    if (isLoad) {
-      gsap.fromTo(
-        ".hero-cycle",
-        {
-          scale: 0.8,
-          opacity: 1,
-        },
-        {
-          scale: 1,
-          duration: 1,
-          ease: "back.out",
-        }
-      );
-    }
 
     gsap.set([".right-part", ".left-part", ".hero-avatar", ".hero-tree"], {
       opacity: 0,
