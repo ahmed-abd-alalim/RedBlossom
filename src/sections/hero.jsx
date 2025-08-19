@@ -20,7 +20,6 @@ const Hero = ({ isLoad, setIsLoad }) => {
         {
           scale: 1,
           duration: 1,
-          delay: 0.5,
           ease: "back.out",
         }
       );
