@@ -8,9 +8,15 @@ const Looding = () => {
   const [isLoad, setIsLoad] = useState(true);
 
   useEffect(() => {
-    window.onload = () => {
-      setIsLoad(false);
-    };
+    const handleLoad = () => setIsLoad(false);
+
+    if (document.readyState === "complete") {
+      // Already loaded
+      handleLoad();
+    } else {
+      window.addEventListener("load", handleLoad);
+      return () => window.removeEventListener("load", handleLoad);
+    }
   }, []);
 
   return (
