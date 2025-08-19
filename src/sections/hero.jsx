@@ -7,11 +7,11 @@ import { HiMiniArrowUpRight } from "@/assets/icons";
 // import components
 import { CycleButton, Button } from "@/components";
 
-const Hero = ({ setIsLoad }) => {
+const Hero = ({ isLoad, setIsLoad }) => {
   useGSAP(() => {
     gsap.set(".hero-cycle", { scale: 1, opacity: 0.2 });
 
-    window.addEventListener("load", () => {
+    if (isLoad) {
       gsap.fromTo(
         ".hero-cycle",
         {
@@ -24,7 +24,7 @@ const Hero = ({ setIsLoad }) => {
           ease: "back.out",
         }
       );
-    });
+    }
 
     gsap.set([".right-part", ".left-part", ".hero-avatar", ".hero-tree"], {
       opacity: 0,

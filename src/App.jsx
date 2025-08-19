@@ -55,7 +55,7 @@ function App() {
           <div className="app-container">
             <Navbar />
             <main>
-              <Hero setIsLoad={setIsLoad} />
+              <Hero setIsLoad={(isLoad, setIsLoad)} />
               <Element name="about">
                 <About />
               </Element>
