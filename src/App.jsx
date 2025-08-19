@@ -39,7 +39,10 @@ function App() {
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
       smooth: 1.5,
+      smoothTouch: 0.1,
       effects: true,
+      normalizeScroll: true,
+      ignoreMobileResize: true,
     });
 
     return () => smoother.kill();
@@ -48,7 +51,7 @@ function App() {
   return (
     <>
       <STP />
-      {/* <RR /> */}
+      <RR />
       <Looding isLoad={isLoad} />
       <div id="smooth-wrapper">
         <div id="smooth-content">
