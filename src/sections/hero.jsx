@@ -9,6 +9,7 @@ import { CycleButton, Button } from "@/components";
 import { useEffect } from "react";
 
 const Hero = ({ isLoad, setIsLoad }) => {
+  const isLoaded = !isLoad;
   useEffect(() => {
     gsap.fromTo(
       ".hero-cycle",
@@ -18,12 +19,11 @@ const Hero = ({ isLoad, setIsLoad }) => {
       },
       {
         scale: 1,
-        duration: 2,
-        delay: 3,
+        duration: 1,
         ease: "back.out",
       }
     );
-  }, [isLoad]);
+  }, [isLoaded]);
 
   useGSAP(() => {
     gsap.set(".hero-cycle", { scale: 1, opacity: 0.2 });
