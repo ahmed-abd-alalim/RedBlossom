@@ -49,7 +49,7 @@ const Svideo = () => {
     <section className="secound-vd-wrapper relative w-full h-[100vh]">
       <video
         ref={videoRef}
-        src="/videos/s-video.mp4"
+        src="https://cdn.jsdelivr.net/gh/ahmed-abd-alalim/red-blossom@main/public/videos/s-video.mp4"
         className="w-screen h-screen object-cover"
         muted
         playsInline

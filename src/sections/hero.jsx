@@ -111,7 +111,7 @@ const Hero = () => {
             autoPlay
             muted
           >
-            <source src="/videos/Hero.webm" />
+            <source src="https://cdn.jsdelivr.net/gh/ahmed-abd-alalim/red-blossom@main/public/videos/Hero.webm" />
           </video>
         </div>
 
