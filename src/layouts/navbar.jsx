@@ -96,19 +96,26 @@ const Navbar = () => {
   }, []); // Empty dependency array to run once on mount
 
   useEffect(() => {
-    function preventScroll(event) {
-      event.preventDefault();
-      window.scrollTo(0, 0);
-    }
     if (menuIsOpen) {
-      window.addEventListener("scroll", preventScroll, { passive: false });
+      // Save current scroll position
+      const scrollY = window.scrollY;
+
+      // Lock body scroll
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
     } else {
-      window.removeEventListener("scroll", preventScroll, { passive: false });
+      // Unlock scroll
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+
+      // Restore scroll position
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      }
     }
-    // Cleanup on unmount
-    return () => {
-      window.removeEventListener("scroll", preventScroll, { passive: false });
-    };
   }, [menuIsOpen]);
 
   return (
