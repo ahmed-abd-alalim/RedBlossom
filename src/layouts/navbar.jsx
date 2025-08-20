@@ -221,7 +221,7 @@ const Navbar = () => {
       </nav>
 
       <div
-        className={`bg-soft-white bg-[url(/images/bgs/1.webp)] bg-[length:110%] bg-[position:center] bg-no-repeat w-full h-[calc(65%-5rem)] md:h-[calc(60%-6rem)] fixed z-100 top-0 left-0 translate-y-[5rem] md:translate-y-[6rem] flex-center text-center transition-all lg:transition-none duration-300 ${
+        className={`bg-soft-white bg-[url(/images/bgs/1.webp)] bg-[length:110%] bg-[position:center] bg-no-repeat w-full h-[calc(65vh-5rem)] md:h-[calc(60vh-6rem)] fixed z-100 top-0 left-0 translate-y-[5rem] md:translate-y-[6rem] flex-center text-center transition-all lg:transition-none duration-300 ${
           menuIsOpen
             ? "translate-x-[0%] lg:translate-x-[150%]"
             : "translate-x-[150%]"
@@ -260,7 +260,7 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`bg-soft-white w-full h-[35%] md:h-[40%] fixed z-100 bottom-0 left-0 transition-all lg:transition-none duration-300 delay-50 flex-center overflow-hidden ${
+        className={`bg-soft-white w-full h-[35vh] md:h-[40vh] fixed z-100 top-[65vh] md:top-[60vh] left-0 transition-all lg:transition-none duration-300 delay-50 flex-center overflow-hidden ${
           menuIsOpen
             ? "translate-x-[0%] lg:translate-x-[150%]"
             : "translate-x-[150%]"
