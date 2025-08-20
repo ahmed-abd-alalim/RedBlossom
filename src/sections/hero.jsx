@@ -115,7 +115,7 @@ const Hero = ({ isLoad, setIsLoad }) => {
             muted
             onCanPlayThrough={() => setIsLoad(false)}
           >
-            <source src="https://cdn.jsdelivr.net/gh/ahmed-abd-alalim/red-blossom@main/videos/Hero.webm" />
+            <source src="https://cdn.jsdelivr.net/gh/ahmed-abd-alalim/RedBlossom@main/videos/Hero.webm" />
           </video>
         </div>
 
