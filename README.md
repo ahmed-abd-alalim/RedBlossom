@@ -68,7 +68,7 @@ We are incredibly fortunate to have Victoria on this project. Thank you for dedi
 🌸 **Design is not just aesthetics it’s an experience, and Victoria made it unforgettable.** 🙏
 
 <p align="left">
-  <a href="https://www.behance.net/3c27fa3f" target="_blank"><img src="https://img.shields.io/badge/-behance-%230077B5?style=for-the-badge&logo=behance&logoColor=white" style="border-radius: 30px" target="_blank"></a>  <a href="https://www.instagram.com/my.vi_design/" target="_blank"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" style="border-radius: 30px" target="_blank"></a>  <a href="https://t.me/myvi_design" target="_blank"><img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" style="border-radius: 30px" target="_blank"></a>
+  <a href="https://www.behance.net/3c27fa3f" target="_blank"><img src="https://img.shields.io/badge/-behance-%230077B5?style=for-the-badge&logo=behance&logoColor=white" style="border-radius: 30px" target="_blank"></a> <a href="https://www.instagram.com/my.vi_design/" target="_blank"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" style="border-radius: 30px" target="_blank"></a> <a href="https://t.me/myvi_design" target="_blank"><img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" style="border-radius: 30px" target="_blank"></a>
 </p>
 
 ## Contact
