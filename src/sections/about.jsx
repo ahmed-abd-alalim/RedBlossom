@@ -76,7 +76,7 @@ const About = () => {
           code and character.
         </p>
       </div>
-      <div className="hidden xl:block w-[10%] absolute bottom-40 right-35 2xl:right-45">
+      <div className="hidden xl:block w-[10%] absolute bottom-20 right-50 2xl:right-65">
         <p className="text-[.7rem]/3 font-medium text-black opacity-30">
           Ideal for digital art lovers, collectors and those who see art as more
           than just a picture.

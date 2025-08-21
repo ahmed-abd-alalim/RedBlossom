@@ -8,7 +8,7 @@ import { HiMiniArrowUpRight } from "@/assets/icons";
 import { CycleButton, Button } from "@/components";
 import { useEffect } from "react";
 
-const Hero = ({ isLoad, setIsLoad }) => {
+const Hero = ({ isLoad, setIsLoad, isSafari }) => {
   useEffect(() => {
     if (!isLoad) {
       gsap.fromTo(
@@ -109,14 +109,25 @@ const Hero = ({ isLoad, setIsLoad }) => {
         <div className="gradient-layer bottom-0 translate-y-1 bg-linear-to-t" />
 
         <div className="hero-avatar relative z-2 h-[27rem] md:h-[50rem] lg:h-[60rem] xl:h-[100vh] overflow-hidden">
-          <video
-            className="h-full relative z-2 scale-130 pr-[.1rem] md:scale-115 md:pr-[1.2rem] lg:scale-100 lg:pr-[1rem] xl:scale-110"
-            autoPlay
-            muted
-            onCanPlayThrough={() => setIsLoad(false)}
-          >
-            <source src="https://cdn.jsdelivr.net/gh/ahmed-abd-alalim/RedBlossom@main/videos/Hero.webm" />
-          </video>
+          {isSafari ? (
+            <div className="h-full relative z-2 scale-130 md:scale-115  lg:scale-100  xl:scale-100 2xl:scale-85 flex-center">
+              <img
+                src="/images/avatars/hero.png"
+                alt="hero img"
+                className="w-full"
+                onLoad={() => setIsLoad(false)}
+              />
+            </div>
+          ) : (
+            <video
+              className="h-full relative z-2 scale-130 pr-[.1rem] md:scale-115 md:pr-[1.2rem] lg:scale-100 lg:pr-[1rem] xl:scale-110"
+              autoPlay
+              muted
+              onCanPlayThrough={() => setIsLoad(false)}
+            >
+              <source src="https://cdn.jsdelivr.net/gh/ahmed-abd-alalim/red-blossom@main/videos/Hero.webm" />
+            </video>
+          )}
         </div>
 
         <div

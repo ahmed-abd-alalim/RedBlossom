@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-const Utility = () => {
+const Utility = ({ isSafari }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const cardData = [
@@ -107,7 +107,7 @@ const Utility = () => {
         trigger: ".utility-section",
         start: "top top",
         end: "bottom",
-        scrub: true,
+        scrub: 2.5,
         pin: true,
         // markers: true,
       },
@@ -118,19 +118,19 @@ const Utility = () => {
       {
         opacity: 1,
         scale: 1,
-        duration: 120,
+        duration: 5,
         ease: "power1.inOut",
       },
       "<"
     )
       .to(".utility-avatar", {
         opacity: 1,
-        duration: 70,
+        duration: 5,
         ease: "power1.inOut",
       })
       .to(".utility-avatar-title", {
         opacity: 1,
-        duration: 50,
+        duration: 5,
         ease: "power1.inOut",
         maskImage:
           "radial-gradient(circle at 50% 0vh, black 50%, transparent 100%)",
@@ -143,7 +143,7 @@ const Utility = () => {
         tl.to(item, {
           y: 0,
           opacity: 1,
-          duration: 40,
+          duration: 10,
           ease: "power1.inOut",
         });
       }
@@ -155,7 +155,7 @@ const Utility = () => {
         // visible check
         tl.to(item, {
           opacity: 1,
-          duration: 30,
+          duration: 10,
           ease: "power1.inOut",
           maskImage:
             "radial-gradient(circle at 50% 0vh, black 50%, transparent 100%)",
@@ -178,13 +178,23 @@ const Utility = () => {
         <div className="utility-avatar gradient-layer bottom-0 translate-y-1 bg-linear-to-t" />
 
         <div className="utility-avatar relative z-2 h-[27rem] md:h-[50rem] lg:h-[60rem] xl:h-[100vh] overflow-hidden">
-          <video
-            className="h-full relative z-2 scale-120 pl-[.2rem] md:scale-115 md:pl-[1.2rem] lg:scale-100 lg:pl-[1rem] xl:scale-105"
-            autoPlay
-            muted
-          >
-            <source src="https://cdn.jsdelivr.net/gh/ahmed-abd-alalim/RedBlossom@main/videos/utility.webm" />
-          </video>
+          {isSafari ? (
+            <div className="h-full relative z-2 scale-110 md:scale-100 lg:scale-95 xl:scale-75 flex-center">
+              <img
+                src="/images/avatars/avatar-1.png"
+                alt="avatar-1"
+                className="w-full"
+              />
+            </div>
+          ) : (
+            <video
+              className="h-full relative z-2 scale-120 pl-[.2rem] md:scale-115 md:pl-[1.2rem] lg:scale-100 lg:pl-[1rem] xl:scale-105"
+              autoPlay
+              muted
+            >
+              <source src="https://cdn.jsdelivr.net/gh/ahmed-abd-alalim/red-blossom@main/videos/utility.webm" />
+            </video>
+          )}
         </div>
         <h2 className="utility-avatar-title hidden xl:block absolute top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2 z-6 text-white text-[2.5rem] font-juzhokaizen text-center text-shadow-lg">
           What do you <br />

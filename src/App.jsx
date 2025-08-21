@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import ScrollSmoother from "gsap/ScrollSmoother";
@@ -27,6 +27,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 function App() {
   const [isLoad, setIsLoad] = useState(true);
+  const [isSafari, setIsSafari] = useState(false);
 
   console.log(
     "\n %c ✦ Enjoy watching ✦ ",
@@ -48,6 +49,12 @@ function App() {
     return () => smoother.kill();
   }, []);
 
+  useEffect(() => {
+    const ua = navigator.userAgent.toLowerCase();
+    const safari = /^((?!chrome|android|edg).)*safari/.test(ua);
+    setIsSafari(safari);
+  }, []);
+
   return (
     <>
       <STP />
@@ -58,7 +65,7 @@ function App() {
           <div className="app-container">
             <Navbar />
             <main>
-              <Hero isLoad={isLoad} setIsLoad={setIsLoad} />
+              <Hero isLoad={isLoad} setIsLoad={setIsLoad} isSafari={isSafari} />
               <Element name="about">
                 <About />
               </Element>
@@ -67,7 +74,7 @@ function App() {
                 <Collection />
               </Element>
               <Element name="utility">
-                <Utility />
+                <Utility isSafari={isSafari} />
               </Element>
               <SVideo />
               <HowToGetIt />
