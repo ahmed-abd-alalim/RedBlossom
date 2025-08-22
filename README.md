@@ -33,7 +33,7 @@ Red Blossom is a modern, elegant, and interactive NFT website where digital art 
 - 📱 **Responsive** — Works perfectly on desktop, tablet, and mobile
 - 🛠️ **Clean Structure** — Easy to customize and extend
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **React + Vite** ⚛️ — Lightning-fast front-end framework
 - **HTML5 / CSS3 / JavaScript (ES6+)** 💻 — Core web technologies
